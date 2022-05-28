@@ -15,7 +15,7 @@ the respective lecture.
 
 ### Running the code
 
-Select the particular section of interest and then open the directory for a `Lecture-<lecture_no>`. Check the **README**
+Select the particular section of interest and then open the directory for a `lecture-<lecture_no>`. Check the **README**
 file for the instructions, branches/tags for the examples given in a lecture.
 
 **_Example_**

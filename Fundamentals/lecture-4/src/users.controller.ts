@@ -2,51 +2,46 @@ import { Controller, Get } from "@nestjs/common";
 
 @Controller("users")
 export class UsersController {
-  // @Example 1: GET: /users
-  @Get()
-  findUsers() {
-    return { users: ["Iron Man", "Dr. Strange"] };
+  // @Example 1: `string` value as response
+  @Get("ping")
+  sayPong() {
+    return "pong";
   }
 
-  // @Example 2: GET: /users/followers
+  // @Example 2: `number` value as response
   @Get("followers")
   findFollowers() {
-    return ["Amitabh", "Ashish", "Akshay", "Sagar", "Anusha"];
+    return 1000;
   }
 
-   // @Example 3: GET: /users/netflix/shows
-  @Get("netflix/shows")
-  findNetflixShows() {
-    return { shows: ["Dark", "Stranger Things", "Elite"] };
+  // @Example 3: `boolean` value as response
+  @Get("online")
+  findIsOnline() {
+    return true;
   }
 
-  // @Example 4: Route for `image` or `images`
-  // GET: /users/image
-  // GET: /users/images
-  @Get("images?")
-  findImageorImages() {
-    return [
-      "https://picsum.photos/200",
-      "https://picsum.photos/300",
-      "https://picsum.photos/400",
-    ];
+  // @Example 4: `undefined` or `null` value as response
+  @Get("unknown")
+  findUnknown() {
+    return null; 
+
+    // NOTE: can be `undefined` also
+    // return undefined;
+
+    // NOTE: can be nothing, act as `undefined`
+    // return;
   }
 
-  // @Example 5: Route for `video-1` or `video-2` and so on..
-  // GET: /users/video1
-  // GET: /users/video2
-  @Get("video-*")
-  findVideoWithDash() {
-    return { success: true };
-  }
+  // @Example 5: `JSON` as response
+  @Get("me")
+  findMe() {
+    return {
+      user: "Computer Baba Fan",
+      like: true,
+      twitter: "akacomputerbaba",
+    };
 
-  // @Example 6: Route for `channel`, `channels`, `channel1`, `channels10` and so on..
-  // GET: /users/channel
-  // GET: /users/channels
-  // GET: /users/channel1
-  // GET: /users/channels10
-  @Get("channels?*")
-  findChannelOrChannels() {
-    return { channel: "https://www.youtube.com/c/ComputerBabaOfficial" };
+    // NOTE: we can also send an `Array`, treated as `JSON` in response
+    // return ['Ajit', 'Ronaldo', 'Iron Man', 'Dr. Strange']
   }
 }

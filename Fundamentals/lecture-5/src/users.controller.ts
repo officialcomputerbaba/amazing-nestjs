@@ -1,39 +1,59 @@
-import { Controller, Get, HttpCode, HttpStatus, Post, Res } from "@nestjs/common";
+import {
+  Controller,
+  Get,
+  Header,
+  HttpCode,
+  HttpStatus,
+  Post,
+  Put,
+  Res,
+} from "@nestjs/common";
 
 import { Response } from "express";
 
 @Controller("users")
 export class UsersController {
-  // @Example 1: When using `@Res/@Response` the `NestJs` will not send the response
-  // this will put the client in wait forever condition
-  @Get("profile")
-  getProfile(@Res() response: Response) {
-    return { tweet: "I will not be sent 🙁" };
+  // @Example 1: setting `Cache-Control` header
+  @Get("cache")
+  @Header("Cache-Control", "none")
+  getCache() {
+    return { message: "Check Cache-Control in headers" };
   }
 
-  // @Example 2: Using `@Res (response)` object to set the status code `200` and sending the response
-  @Post("email")
-  getEmail(@Res() response: Response) {
-    response.status(HttpStatus.OK);
-    response.json({ success: true });
+  // @Example 2: setting multiple headers
+  // `Cache-Control` & `X-Superpower`
+  @Get("power")
+  @Header("Cache-Control", "none")
+  @Header("X-Superpower", "teaching")
+  findSuperPower() {
+    return { message: "Check Cache-Control & X-Superpower in headers" };
   }
 
-  // @Example 3: Using `@Res (response)` object to set status code `200` and
-  // `passThrough` option let the `NestJs` to send the response
-  @Post("message")
-  setMessage(@Res({ passthrough: true }) response: Response) {
-    response.status(HttpStatus.OK);
-    return { message: "Computer Baba is Awesome" };
-  }
-
-  // @Example 4: Overriding the status code
-  // and using `passThrough` option to let the `NestJs` send the response
-  @Post("tags")
+  // @Example 3: composing decorators
+  // setting multiple headers and status code
+  @Put("tags")
+  @Header("Cache-Control", "none")
+  @Header("X-Secret", "Love")
   @HttpCode(HttpStatus.OK)
-  addTags(@Res({ passthrough: true }) response: Response) {
-    response.status(HttpStatus.NO_CONTENT); // this will override the status code set by `@HttpCode`
+  updateTags() {
+    return {
+      message: "Check Cache-Control, X-Secret in headers",
+      info: "Check status code",
+    };
+  }
 
-    // NOTE: Because the status code is `204` hence no `response content` is sent to the client
-    return "Tags added";
+  // @Example 4: setting multiple headers with different techniques
+  // Using `@Header` for Cache-Control
+  // Using `@Res` for X-API-KEY, X-Timestamp
+  @Post("message")
+  @Header("Cache-Control", "none")
+  sendMessage(@Res({ passthrough: true }) response: Response) {
+    response.header({
+      "X-API-KEY": "ad16f7b13b05747062d2b706d3007ea9d593bd48",
+      "X-Timestamp": Date.now(),
+    });
+    return {
+      message: "Check Cache-Control, X-API-KEY & X-Timestamp in headers",
+    };
   }
 }

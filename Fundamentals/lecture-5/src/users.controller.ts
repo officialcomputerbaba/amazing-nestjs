@@ -1,59 +1,67 @@
-import {
-  Controller,
-  Get,
-  Header,
-  HttpCode,
-  HttpStatus,
-  Post,
-  Put,
-  Res,
-} from "@nestjs/common";
+import { Controller, Get, Redirect } from "@nestjs/common";
 
-import { Response } from "express";
+// NOTE: it can be any kind of logic, just for demo
+let recNum = 1;
+function getRecommendations() {
+  recNum += 1;
+
+  if (recNum > 5) {
+    return (recNum = 1);
+  }
+
+  return recNum < 5;
+}
 
 @Controller("users")
 export class UsersController {
-  // @Example 1: setting `Cache-Control` header
-  @Get("cache")
-  @Header("Cache-Control", "none")
-  getCache() {
-    return { message: "Check Cache-Control in headers" };
+  // @Example 1: Redirect to `/users/netflix` route
+  @Get("shows")
+  @Redirect("netflix") // url, statusCode (default to 302)
+  // @Redirect("netflix", 302)
+  // @Redirect("netflix", 307)
+  // @Redirect("/users/netflix", 302)
+  getShow() {
+    return { message: "I am not going to show" };
   }
 
-  // @Example 2: setting multiple headers
-  // `Cache-Control` & `X-Superpower`
-  @Get("power")
-  @Header("Cache-Control", "none")
-  @Header("X-Superpower", "teaching")
-  findSuperPower() {
-    return { message: "Check Cache-Control & X-Superpower in headers" };
-  }
-
-  // @Example 3: composing decorators
-  // setting multiple headers and status code
-  @Put("tags")
-  @Header("Cache-Control", "none")
-  @Header("X-Secret", "Love")
-  @HttpCode(HttpStatus.OK)
-  updateTags() {
+  // redirection path
+  @Get("netflix")
+  redirectNetflix() {
     return {
-      message: "Check Cache-Control, X-Secret in headers",
-      info: "Check status code",
+      shows: ["Dark", "Sabrina"],
+      message: "Netflix Redirect",
+      isRedirectPath: true,
     };
   }
 
-  // @Example 4: setting multiple headers with different techniques
-  // Using `@Header` for Cache-Control
-  // Using `@Res` for X-API-KEY, X-Timestamp
-  @Post("message")
-  @Header("Cache-Control", "none")
-  sendMessage(@Res({ passthrough: true }) response: Response) {
-    response.header({
-      "X-API-KEY": "ad16f7b13b05747062d2b706d3007ea9d593bd48",
-      "X-Timestamp": Date.now(),
-    });
+  // ****************************************** //
+
+  // @Example 2: Dynamic Redirect
+  // we need place the `@Redirect` decorator
+  // then in request handler we must return an object with this fields {url, statusCode}
+  @Get("recommendations")
+  @Redirect()
+  getRecommendations() {
+    const areLatestArrivals = getRecommendations();
+
+    if (areLatestArrivals) {
+      return {
+        url: "/users/latest-shows",
+        statusCode: 302, // optional
+      };
+    } else {
+      return {
+        url: "netflix", // it is same as /users/netflix
+      };
+    }
+  }
+
+  // redirection path
+  @Get("latest-shows")
+  getLatestShows() {
     return {
-      message: "Check Cache-Control, X-API-KEY & X-Timestamp in headers",
+      shows: ["Stanger Things 4", "Money Heist"],
+      message: "Latest shows Redirect",
     };
   }
 }

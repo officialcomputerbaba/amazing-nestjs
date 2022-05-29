@@ -1,32 +1,39 @@
-import { Controller, Delete, HttpCode, HttpStatus, Post } from "@nestjs/common";
+import { Controller, Get, HttpCode, HttpStatus, Post, Res } from "@nestjs/common";
+
+import { Response } from "express";
 
 @Controller("users")
 export class UsersController {
-  // @Example 1: default status code for `POST` request is `201`
-  @Post("profile")
-  createProfile() {
-    return { success: true };
+  // @Example 1: When using `@Res/@Response` the `NestJs` will not send the response
+  // this will put the client in wait forever condition
+  @Get("profile")
+  getProfile(@Res() response: Response) {
+    return { tweet: "I will not be sent 🙁" };
   }
 
-  // @Example 2: setting status code `200`
+  // @Example 2: Using `@Res (response)` object to set the status code `200` and sending the response
   @Post("email")
-  @HttpCode(200)
-  setEmail() {
-    return { success: true };
+  getEmail(@Res() response: Response) {
+    response.status(HttpStatus.OK);
+    response.json({ success: true });
   }
 
-  // @Example 3: setting status code `200` with `HttpStatus` enum
+  // @Example 3: Using `@Res (response)` object to set status code `200` and
+  // `passThrough` option let the `NestJs` to send the response
   @Post("message")
-  @HttpCode(HttpStatus.OK)
-  setMessage() {
-    return { message: "Be Happy" };
+  setMessage(@Res({ passthrough: true }) response: Response) {
+    response.status(HttpStatus.OK);
+    return { message: "Computer Baba is Awesome" };
   }
 
-  // @Example 4: setting status code `204` with `HttpStatus` enum
-  @Delete("tags")
-  @HttpCode(HttpStatus.NO_CONTENT)
-  deleteTags() {
+  // @Example 4: Overriding the status code
+  // and using `passThrough` option to let the `NestJs` send the response
+  @Post("tags")
+  @HttpCode(HttpStatus.OK)
+  addTags(@Res({ passthrough: true }) response: Response) {
+    response.status(HttpStatus.NO_CONTENT); // this will override the status code set by `@HttpCode`
+
     // NOTE: Because the status code is `204` hence no `response content` is sent to the client
-    return "Tags Removed";
+    return "Tags added";
   }
 }

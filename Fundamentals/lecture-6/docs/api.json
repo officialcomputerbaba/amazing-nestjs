@@ -1,0 +1,1029 @@
+{
+	"info": {
+		"_postman_id": "e0867b31-6759-4b78-9e0d-560450536896",
+		"name": "LECTURE-6",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20484049"
+	},
+	"item": [
+		{
+			"name": "Route Params",
+			"item": [
+				{
+					"name": "Route Params Object",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/users/videos/210",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"videos",
+								"210"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Route Params Object",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/users/videos/210",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"users",
+										"videos",
+										"210"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "12"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"c-U1DrFbNTsLC8JUNSGON0yhfc+hY\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 30 May 2022 19:35:05 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"210\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Multiple Params",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/users/movies/comedy/11",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"movies",
+								"comedy",
+								"11"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Multiple Params",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/users/movies/comedy/11",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"users",
+										"movies",
+										"comedy",
+										"11"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "27"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1b-ZE6u8wx7B0atKBrepv0LKJOk154\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 30 May 2022 19:37:04 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"type\": \"comedy\",\n    \"id\": \"11\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Extract Id from Params Object",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/users/shows/10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"shows",
+								"10"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Extract Id from Params Object",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/users/shows/10",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"users",
+										"shows",
+										"10"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "15"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"f-yn3Y+IyyN4FipeQpnCbOXEpNsjk\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 30 May 2022 19:37:53 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"showId\": \"10\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Extract Multiple Params",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/users/latest-movies/comedy/16",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"latest-movies",
+								"comedy",
+								"16"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Extract Multiple Params",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/users/latest-movies/comedy/16",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"users",
+										"latest-movies",
+										"comedy",
+										"16"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "32"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"20-03kPMnS5CjqldGWuonqZ8qC5Cgs\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 30 May 2022 19:38:37 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"type\": \"comedy\",\n    \"movieId\": \"16\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Route Params with Type",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/users/albums/horror/11",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"albums",
+								"horror",
+								"11"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Route Params with Type",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/users/albums/horror/11",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"users",
+										"albums",
+										"horror",
+										"11"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "57"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"39-PkPjLeOGXrv9JV1RL7evu1CQpSg\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 30 May 2022 19:40:02 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"You albums group\",\n    \"group\": \"horror\",\n    \"id\": \"11\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Query Params",
+			"item": [
+				{
+					"name": "Query Params Object",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/users/videos?name=nestjs&playlist=amazing&rating=5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"videos"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "nestjs"
+								},
+								{
+									"key": "playlist",
+									"value": "amazing"
+								},
+								{
+									"key": "rating",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Query Params Object",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/users/videos?name=nestjs&playlist=amazing&rating=5",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"users",
+										"videos"
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "nestjs"
+										},
+										{
+											"key": "playlist",
+											"value": "amazing"
+										},
+										{
+											"key": "rating",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "51"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"33-qY4RQipY5pYMpMkgamY7DHtVUaQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 30 May 2022 19:47:56 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"name\": \"nestjs\",\n    \"playlist\": \"amazing\",\n    \"rating\": \"5\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Extract Name from Query Params",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/users/shows?name=dark&platform=netflix",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"shows"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "dark"
+								},
+								{
+									"key": "platform",
+									"value": "netflix"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Extract Name from Query Params",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/users/shows?name=dark&platform=netflix",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"users",
+										"shows"
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "dark"
+										},
+										{
+											"key": "platform",
+											"value": "netflix"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "16"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"10-Vz0kbz7DMvWBtOvrZVY5mYSJ7iU\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 30 May 2022 19:49:39 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"title\": \"dark\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Extract Multiple Params",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/users/latest-movies?name=spiderman&rating=5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"latest-movies"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "spiderman"
+								},
+								{
+									"key": "rating",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Extract Multiple Params",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/users/latest-movies?name=spiderman&rating=5",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"users",
+										"latest-movies"
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "spiderman"
+										},
+										{
+											"key": "rating",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "33"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"21-hbwyWrwme2uPxpds2wFw+RiVeTo\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 30 May 2022 19:51:30 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"name\": \"spiderman\",\n    \"rating\": \"5\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Query Params with Type",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/users/albums?title=english&size=10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"albums"
+							],
+							"query": [
+								{
+									"key": "title",
+									"value": "english"
+								},
+								{
+									"key": "size",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Query Params with Type",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/users/albums?title=english&size=10",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"users",
+										"albums"
+									],
+									"query": [
+										{
+											"key": "title",
+											"value": "english"
+										},
+										{
+											"key": "size",
+											"value": "10"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "60"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"3c-zyKJaVjrEloTHPcTMY0Oc/U5PMs\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 30 May 2022 19:53:53 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"You albums group\",\n    \"title\": \"english\",\n    \"size\": \"10\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Request Headers",
+			"item": [
+				{
+					"name": "Headers Object",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/users/headers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"headers"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Headers Object",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/users/headers",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"users",
+										"headers"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "223"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"df-aEP3ON+XB5TD8hpyw1kZKByO798\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 30 May 2022 20:01:49 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"user-agent\": \"PostmanRuntime/7.29.0\",\n    \"accept\": \"*/*\",\n    \"cache-control\": \"no-cache\",\n    \"postman-token\": \"26d83d44-2e33-4dd8-8f19-25755f205728\",\n    \"host\": \"localhost:3000\",\n    \"accept-encoding\": \"gzip, deflate, br\",\n    \"connection\": \"keep-alive\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Extract UserAgent from Headers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/users/runtime",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"runtime"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Extract UserAgent from Headers",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/users/runtime",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"users",
+										"runtime"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "35"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"23-Xe859WI5gTYJIrBpNMLiFAEFez0\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 30 May 2022 20:40:01 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"runtime\": \"PostmanRuntime/7.29.0\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Extract Multiple Headers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/users/multi-headers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"multi-headers"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Extract Multiple Headers",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/users/multi-headers",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"users",
+										"multi-headers"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "61"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"3d-vX//nMr+FvWZfy/TLDhNbLeFh0I\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 30 May 2022 20:41:05 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"runtime\": \"PostmanRuntime/7.29.0\",\n    \"cacheControl\": \"no-cache\"\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}

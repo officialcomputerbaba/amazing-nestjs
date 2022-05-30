@@ -1,42 +1,27 @@
-import { Controller, Get, Query } from "@nestjs/common";
-
-interface AlbumQueryParams {
-  size: number;
-  title: string;
-}
+import { Controller, Get, Headers } from "@nestjs/common";
 
 @Controller("users")
 export class UsersController {
-  // @Example 1: Query Params Object
-  @Get("videos")
-  getVideos(@Query() params: Record<string, any>) {
-    console.log(params);
-    return params;
+  // @Example 1: Headers Params Object
+  @Get("headers")
+  getHeaders(@Headers() headers: Record<string, any>) {
+    console.log(headers);
+    return headers;
   }
 
-  // @Example 2: Extract `name` param from Query Params Object
-  @Get("shows")
-  getShows(@Query("name") name: string) {
-    console.log(name);
-    return { title: name };
+  // @Example 2: Extract `User-Agent` header from Headers Object
+  @Get("runtime")
+  getRuntime(@Headers("User-Agent") ua: string) {
+    console.log(ua);
+    return { runtime: ua };
   }
 
-  // @Example 3: Extract multiple params from Query Params Object
-  @Get("latest-movies")
-  getLatestMovies(
-    @Query("name") name: string,
-    @Query("rating") rating: number // NOTE: data type is only for developer ref, query params values are always in `string` format
+  // @Example 3: Extract multiple headers from Headers Object
+  @Get("multi-headers")
+  getRuntimeAndCache(
+    @Headers("User-Agent") ua: string,
+    @Headers("Cache-Control") cache: string
   ) {
-    return { name, rating };
-  }
-
-  // @Example 4: Query Params Object with a `type`
-  @Get("albums")
-  getAlbums(@Query() params: AlbumQueryParams) {
-    return {
-      message: "You albums group",
-      title: params.title,
-      size: params.size,
-    };
+    return { runtime: ua, cacheControl: cache };
   }
 }

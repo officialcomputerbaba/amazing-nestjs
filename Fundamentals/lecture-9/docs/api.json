@@ -1,0 +1,457 @@
+{
+	"info": {
+		"_postman_id": "0bb3f2da-e829-48ef-bb3e-2fb219e24850",
+		"name": "LECTURE-9",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20484049"
+	},
+	"item": [
+		{
+			"name": "Sub-Domain Routing",
+			"item": [
+				{
+					"name": "Host Param Object",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://admin.mydomain.com/users/shows",
+							"protocol": "http",
+							"host": [
+								"admin",
+								"mydomain",
+								"com"
+							],
+							"path": [
+								"users",
+								"shows"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Host Param Object",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://admin.mydomain.com/users/shows",
+									"protocol": "http",
+									"host": [
+										"admin",
+										"mydomain",
+										"com"
+									],
+									"path": [
+										"users",
+										"shows"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "65"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"41-ZHbUZNieAkzUBQQG5jO3CHVnhso\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 06 Jun 2022 19:44:15 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"shows\": [\n        \"Stranger Things\",\n        \"Dark\"\n    ],\n    \"hostParams\": {\n        \"app\": \"admin\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Extract app from Host Param Object",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://admin.mydomain.com/users/movies",
+							"protocol": "http",
+							"host": [
+								"admin",
+								"mydomain",
+								"com"
+							],
+							"path": [
+								"users",
+								"movies"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Extract app from Host Param Object",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://admin.mydomain.com/users/movies",
+									"protocol": "http",
+									"host": [
+										"admin",
+										"mydomain",
+										"com"
+									],
+									"path": [
+										"users",
+										"movies"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "55"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"37-hyhe8Iwo5jg66ZGIR/tcOtDGgRY\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 06 Jun 2022 19:46:44 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"movies\": [\n        \"Eternals\",\n        \"Shang Chi\"\n    ],\n    \"subDomain\": \"admin\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Multiple Params",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://upload.content.com/studio/shows",
+							"protocol": "http",
+							"host": [
+								"upload",
+								"content",
+								"com"
+							],
+							"path": [
+								"studio",
+								"shows"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Multiple Params",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://upload.content.com/studio/shows",
+									"protocol": "http",
+									"host": [
+										"upload",
+										"content",
+										"com"
+									],
+									"path": [
+										"studio",
+										"shows"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "83"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"53-ZAkCzDRG3Q6XcmbtUu9OWLC7cKM\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 06 Jun 2022 19:48:38 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"shows\": [\n        \"Stranger Things\",\n        \"Dark\"\n    ],\n    \"hostParams\": {\n        \"sub\": \"upload\",\n        \"base\": \"content\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Extract Mutltiple Params",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://upload.content.com/studio/movies",
+							"protocol": "http",
+							"host": [
+								"upload",
+								"content",
+								"com"
+							],
+							"path": [
+								"studio",
+								"movies"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Extract Mutltiple Params",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://upload.content.com/studio/movies",
+									"protocol": "http",
+									"host": [
+										"upload",
+										"content",
+										"com"
+									],
+									"path": [
+										"studio",
+										"movies"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "79"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"4f-MYdBnLzEAJRY/bglPSQ1/LzQbpM\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 06 Jun 2022 19:50:18 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"movies\": [\n        \"Eternals\",\n        \"Shang Chi\"\n    ],\n    \"subDomain\": \"upload\",\n    \"baseDomain\": \"content\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "IP",
+			"item": [
+				{
+					"name": "IP Detail",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/users/ip",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"ip"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Local Host",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/users/ip",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"users",
+										"ip"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "12"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"c-+Z7xBwt+Ms/MBZyImppKXY5DaNg\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 06 Jun 2022 19:56:52 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"ip\": \"::1\"\n}"
+						},
+						{
+							"name": "Sample: Real World IP",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/users/ip",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"users",
+										"ip"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "12"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"c-+Z7xBwt+Ms/MBZyImppKXY5DaNg\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 06 Jun 2022 19:56:52 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"ip\": \"122.161.79.227\"\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}

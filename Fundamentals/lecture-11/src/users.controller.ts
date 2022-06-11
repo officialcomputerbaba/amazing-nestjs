@@ -1,26 +1,18 @@
-import { Controller, Inject } from "@nestjs/common";
-import { DatabaseStore } from "./stores/database.store";
+import { Controller } from "@nestjs/common";
 import { PersonStore } from "./stores/person.store";
 import { UsersStore } from "./stores/users.store";
 
 @Controller("/users")
 export class UsersController {
   constructor(
-    @Inject("STORE") private dbStore: DatabaseStore, // would inject `DatabaseStore`
+    private userStore: UsersStore, // would inject `UserStore`
 
-    private userStore: UsersStore, // would inject `PersonStore`
-
-    private personStore: PersonStore // would inject `GlobalStore`
+    private existingUserStore: PersonStore // would inject existing instance of  `UserStore`
   ) {
     console.log("Inside [UsersController]");
 
-    console.log("Token `STORE` & Injected :", this.dbStore.getStore());
+    console.log(this.userStore.getStore());
 
-    console.log("Token: `UsersStore` & Injected :", this.userStore.getStore());
-
-    console.log(
-      "Token: `PersonStore` & Injected :",
-      this.personStore.getStore()
-    );
+    console.log(this.existingUserStore.getStore());
   }
 }

@@ -1,15 +1,17 @@
 import { Module } from "@nestjs/common";
+import {
+  PersonStore,
+  PERSON_STORE_INJECTION_TOKEN,
+} from "./stores/person.store";
 import { UsersStore } from "./stores/users.store";
 import { UsersController } from "./users.controller";
 
 @Module({
   controllers: [UsersController],
   providers: [
-    // Same Name provider - where Injection token, and Dependency name is same
-    UsersStore,
+    { provide: "STORE", useClass: UsersStore },
 
-    // NOTE: above statement is the shorthand syntax of below line
-    // { provide: UsersStore, useClass: UsersStore }
+    { provide: PERSON_STORE_INJECTION_TOKEN, useClass: PersonStore },
   ],
 })
 export class AppModule {}

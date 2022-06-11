@@ -6,10 +6,11 @@ import { UsersController } from "./users.controller";
 @Module({
   controllers: [UsersController],
   providers: [
-    UsersStore,
+    UsersStore, // instance 1
 
-    // token name = `PersonStore` & dependency = `UsersStore` existing instance (above statement)
-    { provide: PersonStore, useExisting: UsersStore },
+    // if we use `useClass` instead of `useExisting` then two instance of `UsersStore` will be created
+    // NOTE: in this case no cached or shared instance of `UsersStore` is used a new one is created that is instance 2
+    { provide: PersonStore, useClass: UsersStore },
   ],
 })
 export class AppModule {}

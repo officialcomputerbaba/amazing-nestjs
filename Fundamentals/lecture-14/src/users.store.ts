@@ -2,8 +2,7 @@ import { Injectable, Scope } from "@nestjs/common";
 
 let instanceCount = 0;
 
-// new dedicated instance is created for each consumer of this dependency
-@Injectable({ scope: Scope.TRANSIENT })
+@Injectable()
 export class UsersStore {
   public readonly storeN: number;
 

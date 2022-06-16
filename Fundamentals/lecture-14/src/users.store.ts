@@ -1,9 +1,19 @@
 import { Injectable, Scope } from "@nestjs/common";
 
-// new instance is created whenever a HTTP request comes in and destroyed after request completion
-@Injectable({ scope: Scope.REQUEST })
+let instanceCount = 0;
+
+// new dedicated instance is created for each consumer of this dependency
+@Injectable({ scope: Scope.TRANSIENT })
 export class UsersStore {
+  public readonly storeN: number;
+
   constructor() {
-    console.log(`[UsersStore]: init on HTTP request`);
+    this.storeN = ++instanceCount;
+
+    console.log(`UsersStore init (instance ${this.storeN})`);
+  }
+
+  getStore() {
+    return `I am UsersStore (instance ${this.storeN})`;
   }
 }

@@ -1,9 +1,9 @@
 import { Controller } from "@nestjs/common";
 import { UsersStore } from "./users.store";
 
-@Controller("users")
-export class UsersController {
+@Controller("students")
+export class StudentsController {
   constructor(private store: UsersStore) {
-    console.log(`[UsersController]:`, this.store.getStore());
+    console.log(`[StudentsController]:`, this.store.getStore());
   }
 }

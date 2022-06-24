@@ -1,4 +1,4 @@
 import { Controller } from "@nestjs/common";
 
-@Controller("/office")
+@Controller("office")
 export class OfficeController {}

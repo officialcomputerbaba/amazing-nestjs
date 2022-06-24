@@ -1,9 +1,9 @@
 import { Injectable } from "@nestjs/common";
-import { UsersService } from "src/users/services/users.service";
+import { JobsApplicationsService } from "src/jobs/jobs-applications/jobs-applications.service";
 
 @Injectable()
 export class EmployersService {
-  constructor(private usersService: UsersService) {
-    console.log("[EmployersService]: Users service injected");
+  constructor(private jobsAppService: JobsApplicationsService) {
+    console.log("[EmployersService]: Jobs applications service injected");
   }
 }

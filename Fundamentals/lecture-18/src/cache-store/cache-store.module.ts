@@ -2,6 +2,8 @@ import { Module, DynamicModule } from "@nestjs/common";
 import { StoreOptions } from "./interfaces/store-options";
 import { CacheStoreService } from "./services/cache-store.service";
 import { StoreType } from "./enums/store.enum";
+import { mkdir, opendir } from "fs/promises";
+import { Dir } from "fs";
 
 const DEFAULT_STORE_NAME = "DEFAULT_CACHE";
 const DEFAULT_STORE_TYPE = StoreType.MEMORY;
@@ -15,7 +17,8 @@ class RootCacheStoreModule {}
 
 @Module({})
 export class CacheStoreModule {
-  static forRoot(options: StoreOptions): DynamicModule {
+  // create dynamic module asynchronously
+  static async forRootAsync(options: StoreOptions): Promise<DynamicModule> {
     const storeOptions = CacheStoreModule.buildStoreOptions(options);
 
     if (storeOptions.storeType === StoreType.FILE && !storeOptions.storeDir) {
@@ -24,6 +27,23 @@ export class CacheStoreModule {
 
     // setting root store options
     ROOT_STORE_OPTIONS = storeOptions;
+
+    let dirHandle: Dir;
+
+    // create store directory if not exists
+    if (storeOptions.storeType === StoreType.FILE) {
+      try {
+        dirHandle = await opendir(storeOptions.storeDir);
+      } catch (err) {
+        if (err.code === "ENOENT") {
+          await mkdir(storeOptions.storeDir);
+        } else {
+          throw err;
+        }
+      } finally {
+        await dirHandle?.close();
+      }
+    }
 
     // default store provider token `DEFAULT_CACHE-STORE`
     const STORE_NAME_TOKEN = CacheStoreModule.createStoreInjectionToken(

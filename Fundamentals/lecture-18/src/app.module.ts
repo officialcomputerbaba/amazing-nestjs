@@ -10,9 +10,9 @@ import { AppService } from "./app.service";
     UsersModule,
     JobsModule,
 
-    // create dynamic module with below options
+    // NOTE: create dynamic module with below options asynchronously
     // `storeName` is not set therefore default name is used (DEFAULT_CACHE)
-    CacheStoreModule.forRoot({
+    CacheStoreModule.forRootAsync({
       storeType: StoreType.FILE,
       storeDir: join(__dirname, "stores"),
     }),

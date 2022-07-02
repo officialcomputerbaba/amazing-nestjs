@@ -1,0 +1,1049 @@
+{
+	"info": {
+		"_postman_id": "17b62517-ccc8-4319-b0c8-4471c2a806d7",
+		"name": "LECTURE-21",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20484049"
+	},
+	"item": [
+		{
+			"name": "Jobs",
+			"item": [
+				{
+					"name": "Get Job By Ref Id (ParseUUIDPipe)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/jobs/ref/4f3f2898-69e3-5a0d-820a-c4e87987dbce",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"jobs",
+								"ref",
+								"4f3f2898-69e3-5a0d-820a-c4e87987dbce"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Job By Ref Id",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/jobs/ref/4f3f2898-69e3-5a0d-820a-c4e87987dbce",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"jobs",
+										"ref",
+										"4f3f2898-69e3-5a0d-820a-c4e87987dbce"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "212"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"d4-g+LWsSMqHX0nPzOrXpjh+1oZlD8\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 01 May 2022 22:13:01 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"companyName\": \"Sony\",\n    \"title\": \"Spiderman\",\n    \"email\": \"xyz@mail.com\",\n    \"type\": 2,\n    \"experience\": 1,\n    \"salary\": 500.9,\n    \"tags\": [\n        \"java\",\n        \"spring\",\n        \"rest api\"\n    ],\n    \"isActive\": false,\n    \"refId\": \"4f3f2898-69e3-5a0d-820a-c4e87987dbce\",\n    \"id\": 11\n}"
+						},
+						{
+							"name": "Invalid UUID: Get Job By Ref Id",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/jobs/ref/4f3f2898-69e3-5a0d-820a-c4e87987",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"jobs",
+										"ref",
+										"4f3f2898-69e3-5a0d-820a-c4e87987"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "90"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"5a-AoL7ViAYh+9pjqxW9JxchTMUQzY\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 01 May 2022 22:13:15 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 400,\n    \"message\": \"Validation failed (uuid  is expected)\",\n    \"error\": \"Bad Request\"\n}"
+						}
+					]
+				},
+				{
+					"name": "UUID 3: Get Job By Ref Id (ParseUUIDPipe)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/jobs/ref-v3/6375de98-3dc4-3385-bf55-5c4434132c48",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"jobs",
+								"ref-v3",
+								"6375de98-3dc4-3385-bf55-5c4434132c48"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Invalid UUID: Require UUID v3",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/jobs/ref-v3/d53284ea-9150-422e-895f-93917d3d9ab7",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"jobs",
+										"ref-v3",
+										"d53284ea-9150-422e-895f-93917d3d9ab7"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "92"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"5c-rDMmmMMEkPRem2KOycgBmT64F70\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 02 Jul 2022 08:42:26 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 400,\n    \"message\": \"Validation failed (uuid v3 is expected)\",\n    \"error\": \"Bad Request\"\n}"
+						},
+						{
+							"name": "UUID 3",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/jobs/ref-v3/6375de98-3dc4-3385-bf55-5c4434132c48",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"jobs",
+										"ref-v3",
+										"6375de98-3dc4-3385-bf55-5c4434132c48"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "212"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"d4-d9cJHIhbOyB6lNkRHOmIqPoVwM8\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 02 Jul 2022 08:47:55 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"companyName\": \"Sony\",\n    \"title\": \"Spiderman\",\n    \"email\": \"xyz@mail.com\",\n    \"type\": 2,\n    \"experience\": 1,\n    \"salary\": 500.9,\n    \"tags\": [\n        \"java\",\n        \"spring\",\n        \"rest api\"\n    ],\n    \"isActive\": false,\n    \"refId\": \"6375de98-3dc4-3385-bf55-5c4434132c48\",\n    \"id\": 11\n}"
+						}
+					]
+				},
+				{
+					"name": "UUID 4: Get Job By Ref Id (ParseUUIDPipe)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/jobs/ref-v4/d53284ea-9150-422e-895f-93917d3d9ab7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"jobs",
+								"ref-v4",
+								"d53284ea-9150-422e-895f-93917d3d9ab7"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Invalid UUID: Require UUID v3",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/jobs/ref-v4/6375de98-3dc4-3385-bf55-5c4434132c48",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"jobs",
+										"ref-v4",
+										"6375de98-3dc4-3385-bf55-5c4434132c48"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "92"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"5c-rDMmmMMEkPRem2KOycgBmT64F70\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 02 Jul 2022 08:42:26 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 400,\n    \"message\": \"Validation failed (uuid v4 is expected)\",\n    \"error\": \"Bad Request\"\n}"
+						},
+						{
+							"name": "UUID 4",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/jobs/ref-v4/d53284ea-9150-422e-895f-93917d3d9ab7",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"jobs",
+										"ref-v4",
+										"d53284ea-9150-422e-895f-93917d3d9ab7"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "217"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"d9-/RHTF78d8vNy/hGPYAbEqmi7CHQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 02 Jul 2022 08:49:05 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"companyName\": \"Marval\",\n    \"title\": \"Dr. Strange\",\n    \"email\": \"abc@mail.com\",\n    \"type\": 1,\n    \"experience\": 4,\n    \"salary\": 450.65,\n    \"tags\": [\n        \"nodejs\",\n        \"nestjs\",\n        \"rest api\"\n    ],\n    \"isActive\": true,\n    \"refId\": \"d53284ea-9150-422e-895f-93917d3d9ab7\",\n    \"id\": 4\n}"
+						}
+					]
+				},
+				{
+					"name": "Toggle Job Type (ParseEnumPipe)",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"type\": \"PART_TIME\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/jobs/type/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"jobs",
+								"type",
+								"4"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Toggle Job Type",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"type\": \"PART_TIME\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/jobs/type/4",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"jobs",
+										"type",
+										"4"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "227"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"e3-jIvfYr2ws+MTFyfyR619PqbLCXo\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 01 May 2022 22:16:48 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"companyName\": \"Marval\",\n    \"title\": \"Dr. Strange\",\n    \"email\": \"abc@mail.com\",\n    \"type\": \"PART_TIME\",\n    \"experience\": 4,\n    \"salary\": 450.65,\n    \"tags\": [\n        \"nodejs\",\n        \"nestjs\",\n        \"rest api\"\n    ],\n    \"isActive\": true,\n    \"refId\": \"d53284ea-9150-422e-895f-93917d3d9ab7\",\n    \"id\": 4\n}"
+						},
+						{
+							"name": "Invalid Enum: Toggle Job Type",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"type\": \"FREELANCE\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/jobs/type/4",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"jobs",
+										"type",
+										"4"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "96"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"60-NlVB6GTnM1WzTEKkT6ZcSQ7nRyE\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 01 May 2022 22:17:05 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 400,\n    \"message\": \"Validation failed (enum string is expected)\",\n    \"error\": \"Bad Request\"\n}"
+						},
+						{
+							"name": "Enum Num: Toggle Job Type",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"type\": 2\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/jobs/type/4",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"jobs",
+										"type",
+										"4"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "217"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"d9-BIzd47OaRLWTD1Hvm38jLMe/gzA\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 01 May 2022 22:18:32 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"companyName\": \"Marval\",\n    \"title\": \"Dr. Strange\",\n    \"email\": \"abc@mail.com\",\n    \"type\": 2,\n    \"experience\": 4,\n    \"salary\": 450.65,\n    \"tags\": [\n        \"nodejs\",\n        \"nestjs\",\n        \"rest api\"\n    ],\n    \"isActive\": true,\n    \"refId\": \"d53284ea-9150-422e-895f-93917d3d9ab7\",\n    \"id\": 4\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Jobs By Ids (ParseArrayPipe)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/jobs/search?id=2,11,4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"jobs",
+								"search"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "2,11,4"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Jobs By Ids",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/jobs/search?id=2,11,4",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"jobs",
+										"search"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "2,11,4"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "432"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1b0-zzwKZFsx2522jl8rza4ynebt+Co\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 01 May 2022 22:20:42 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"companyName\": \"Marval\",\n        \"title\": \"Dr. Strange\",\n        \"email\": \"abc@mail.com\",\n        \"type\": 1,\n        \"experience\": 4,\n        \"salary\": 450.65,\n        \"tags\": [\n            \"nodejs\",\n            \"nestjs\",\n            \"rest api\"\n        ],\n        \"isActive\": true,\n        \"refId\": \"d53284ea-9150-422e-895f-93917d3d9ab7\",\n        \"id\": 4\n    },\n    {\n        \"companyName\": \"Sony\",\n        \"title\": \"Spiderman\",\n        \"email\": \"xyz@mail.com\",\n        \"type\": 2,\n        \"experience\": 1,\n        \"salary\": 500.9,\n        \"tags\": [\n            \"java\",\n            \"spring\",\n            \"rest api\"\n        ],\n        \"isActive\": false,\n        \"refId\": \"4f3f2898-69e3-5a0d-820a-c4e87987dbce\",\n        \"id\": 11\n    }\n]"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Controller Level Pipe",
+			"item": [
+				{
+					"name": "Get Job By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/jobs/11",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"jobs",
+								"11"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Job By Id",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/jobs/11",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"jobs",
+										"11"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "212"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"d4-d9cJHIhbOyB6lNkRHOmIqPoVwM8\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 02 Jul 2022 08:55:42 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"companyName\": \"Sony\",\n    \"title\": \"Spiderman\",\n    \"email\": \"xyz@mail.com\",\n    \"type\": 2,\n    \"experience\": 1,\n    \"salary\": 500.9,\n    \"tags\": [\n        \"java\",\n        \"spring\",\n        \"rest api\"\n    ],\n    \"isActive\": false,\n    \"refId\": \"6375de98-3dc4-3385-bf55-5c4434132c48\",\n    \"id\": 11\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Job Exp",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/jobs/exp/11?exp=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"jobs",
+								"exp",
+								"11"
+							],
+							"query": [
+								{
+									"key": "exp",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update Job Exp",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/jobs/exp/11?exp=2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"jobs",
+										"exp",
+										"11"
+									],
+									"query": [
+										{
+											"key": "exp",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "212"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"d4-5B2GFyY6YL9fRjj6cyVr8GBJ6Ds\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 02 Jul 2022 08:56:27 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"companyName\": \"Sony\",\n    \"title\": \"Spiderman\",\n    \"email\": \"xyz@mail.com\",\n    \"type\": 2,\n    \"experience\": 2,\n    \"salary\": 500.9,\n    \"tags\": [\n        \"java\",\n        \"spring\",\n        \"rest api\"\n    ],\n    \"isActive\": false,\n    \"refId\": \"6375de98-3dc4-3385-bf55-5c4434132c48\",\n    \"id\": 11\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Job Type",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"type\": 2\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/jobs/type/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"jobs",
+								"type",
+								"4"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Enum Num: Update Job Type",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"type\": 2\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/jobs/type/4",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"jobs",
+										"type",
+										"4"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "217"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"d9-BIzd47OaRLWTD1Hvm38jLMe/gzA\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 02 Jul 2022 08:57:18 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"companyName\": \"Marval\",\n    \"title\": \"Dr. Strange\",\n    \"email\": \"abc@mail.com\",\n    \"type\": 2,\n    \"experience\": 4,\n    \"salary\": 450.65,\n    \"tags\": [\n        \"nodejs\",\n        \"nestjs\",\n        \"rest api\"\n    ],\n    \"isActive\": true,\n    \"refId\": \"d53284ea-9150-422e-895f-93917d3d9ab7\",\n    \"id\": 4\n}"
+						},
+						{
+							"name": "Validation Failed: Enum String",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"type\": \"FULL_TIME\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/jobs/type/4",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"jobs",
+										"type",
+										"4"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "99"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"63-BAojB7qX+mLY6LkS424DwNJnIw8\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 02 Jul 2022 08:57:49 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 400,\n    \"message\": \"Validation failed (numeric string is expected)\",\n    \"error\": \"Bad Request\"\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}

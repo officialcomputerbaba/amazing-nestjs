@@ -1,0 +1,632 @@
+{
+	"info": {
+		"_postman_id": "e96fefbf-8761-465a-b655-0927d10ec3cf",
+		"name": "LECTURE-20",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20484049"
+	},
+	"item": [
+		{
+			"name": "Jobs",
+			"item": [
+				{
+					"name": "Get Job By Id (ParseIntPipe)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/jobs/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"jobs",
+								"4"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Job By Id (ParseIntPipe)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/jobs/4",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"jobs",
+										"4"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "217"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"d9-/RHTF78d8vNy/hGPYAbEqmi7CHQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 01 May 2022 22:02:27 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"companyName\": \"Marval\",\n    \"title\": \"Dr. Strange\",\n    \"email\": \"abc@mail.com\",\n    \"type\": 1,\n    \"experience\": 4,\n    \"salary\": 450.65,\n    \"tags\": [\n        \"nodejs\",\n        \"nestjs\",\n        \"rest api\"\n    ],\n    \"isActive\": true,\n    \"refId\": \"d53284ea-9150-422e-895f-93917d3d9ab7\",\n    \"id\": 4\n}"
+						},
+						{
+							"name": "Validation Failed: Bad Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/jobs/k",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"jobs",
+										"k"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "99"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"63-BAojB7qX+mLY6LkS424DwNJnIw8\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 02 Jul 2022 07:59:19 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 400,\n    \"message\": \"Validation failed (numeric string is expected)\",\n    \"error\": \"Bad Request\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Job Details (HttpStatus Option)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/jobs/details/k",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"jobs",
+								"details",
+								"k"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Custom Http Status Code: Validation Failed",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/jobs/details/k",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"jobs",
+										"details",
+										"k"
+									]
+								}
+							},
+							"status": "Not Acceptable",
+							"code": 406,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "102"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"66-hpQBo9iHJ6uQ9gurz5R912vfp9M\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 02 Jul 2022 08:00:39 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 406,\n    \"message\": \"Validation failed (numeric string is expected)\",\n    \"error\": \"Not Acceptable\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Inc Salary (UsePipes - ParseIntPipe)",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/jobs/inc-salary/4?increment=150",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"jobs",
+								"inc-salary",
+								"4"
+							],
+							"query": [
+								{
+									"key": "increment",
+									"value": "150"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Inc Salary (UsePipes - ParseIntPipe)",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/jobs/inc-salary/4?increment=150",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"jobs",
+										"inc-salary",
+										"4"
+									],
+									"query": [
+										{
+											"key": "increment",
+											"value": "150"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "217"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"d9-QIHm7+b5c2zFLbV6REbc3/3wq9o\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 02 Jul 2022 08:05:07 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"companyName\": \"Marval\",\n    \"title\": \"Dr. Strange\",\n    \"email\": \"abc@mail.com\",\n    \"type\": 1,\n    \"experience\": 4,\n    \"salary\": 600.65,\n    \"tags\": [\n        \"nodejs\",\n        \"nestjs\",\n        \"rest api\"\n    ],\n    \"isActive\": true,\n    \"refId\": \"d53284ea-9150-422e-895f-93917d3d9ab7\",\n    \"id\": 4\n}"
+						}
+					]
+				},
+				{
+					"name": "Inc Salary (ParseFloatPipe)",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/jobs/salary/4?increment=150.20",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"jobs",
+								"salary",
+								"4"
+							],
+							"query": [
+								{
+									"key": "increment",
+									"value": "150.20"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Inc Salary (ParseFloatPipe)",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/jobs/salary/4?increment=150.20",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"jobs",
+										"salary",
+										"4"
+									],
+									"query": [
+										{
+											"key": "increment",
+											"value": "150.20"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "228"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"e4-+RhWT2srOF32qr71ykkwwfBrCf8\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 01 May 2022 22:04:24 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"companyName\": \"Marval\",\n    \"title\": \"Dr. Strange\",\n    \"email\": \"abc@mail.com\",\n    \"type\": 1,\n    \"experience\": 4,\n    \"salary\": 600.8499999999999,\n    \"tags\": [\n        \"nodejs\",\n        \"nestjs\",\n        \"rest api\"\n    ],\n    \"isActive\": true,\n    \"refId\": \"d53284ea-9150-422e-895f-93917d3d9ab7\",\n    \"id\": 4\n}"
+						}
+					]
+				},
+				{
+					"name": "Toggle Active Status (ParseBoolPipe)",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"active\": \"false\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/jobs/active/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"jobs",
+								"active",
+								"4"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Toggle Active Status (ParseBoolPipe)",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"active\": \"false\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/jobs/active/4",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"jobs",
+										"active",
+										"4"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "229"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"e5-pwywH6h/c2S7VPgpUBmGiy84Xas\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 01 May 2022 22:05:45 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"companyName\": \"Marval\",\n    \"title\": \"Dr. Strange\",\n    \"email\": \"abc@mail.com\",\n    \"type\": 1,\n    \"experience\": 4,\n    \"salary\": 600.8499999999999,\n    \"tags\": [\n        \"nodejs\",\n        \"nestjs\",\n        \"rest api\"\n    ],\n    \"isActive\": false,\n    \"refId\": \"d53284ea-9150-422e-895f-93917d3d9ab7\",\n    \"id\": 4\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Job Exp (DefaultValuePipe)",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/jobs/exp/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"jobs",
+								"exp",
+								"4"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Default: Update Job Exp",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/jobs/exp/4",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"jobs",
+										"exp",
+										"4"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "217"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"d9-OKS6yfsGsQBjBiGwTn2lcAzq31s\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 01 May 2022 22:10:28 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"companyName\": \"Marval\",\n    \"title\": \"Dr. Strange\",\n    \"email\": \"abc@mail.com\",\n    \"type\": 1,\n    \"experience\": 1,\n    \"salary\": 450.65,\n    \"tags\": [\n        \"nodejs\",\n        \"nestjs\",\n        \"rest api\"\n    ],\n    \"isActive\": true,\n    \"refId\": \"d53284ea-9150-422e-895f-93917d3d9ab7\",\n    \"id\": 4\n}"
+						},
+						{
+							"name": "Default and Transform: Update Job Exp",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/jobs/exp/4?exp=4",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"jobs",
+										"exp",
+										"4"
+									],
+									"query": [
+										{
+											"key": "exp",
+											"value": "4"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "217"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"d9-/RHTF78d8vNy/hGPYAbEqmi7CHQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 01 May 2022 22:11:41 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"companyName\": \"Marval\",\n    \"title\": \"Dr. Strange\",\n    \"email\": \"abc@mail.com\",\n    \"type\": 1,\n    \"experience\": 4,\n    \"salary\": 450.65,\n    \"tags\": [\n        \"nodejs\",\n        \"nestjs\",\n        \"rest api\"\n    ],\n    \"isActive\": true,\n    \"refId\": \"d53284ea-9150-422e-895f-93917d3d9ab7\",\n    \"id\": 4\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}

@@ -26,11 +26,11 @@ export class ParseDatePipe implements PipeTransform {
   }
 
   transform(value: string | number, metadata: ArgumentMetadata) {
-    // extract data (key) 
+    // extract data (key)
     const { data: isKeyGiven } = metadata;
 
     if (!isKeyGiven) {
-        value = value[this.dataKey];
+      value = value[this.dataKey];
     }
 
     const date = this.fromTimestamp

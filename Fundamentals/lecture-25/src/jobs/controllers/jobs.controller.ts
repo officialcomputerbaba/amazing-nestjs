@@ -11,9 +11,8 @@ import { JobsService } from "../services/jobs.service";
 export class JobsController {
   constructor(private readonly jobsService: JobsService) {}
 
- 
-  @Post()
-  createJob(@Body(ValidationPipe) createJobDto: CreateJobDTO) {
+  @Post("with-locations")
+  createJobWithLocations(@Body(ValidationPipe) createJobDto: CreateJobDTO) {
     return this.jobsService.createJob(createJobDto);
   }
 }

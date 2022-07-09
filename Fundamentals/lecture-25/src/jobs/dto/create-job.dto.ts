@@ -11,7 +11,7 @@ import {
   ArrayMinSize,
   IsNotEmpty,
   ValidateNested,
-  IsArray,
+  IsObject,
 } from "class-validator";
 
 import { Type } from "class-transformer";
@@ -57,9 +57,8 @@ export class CreateJobDTO {
   @IsOptional()
   isActive?: boolean;
 
-  @ValidateNested({ each: true })
+  @ValidateNested()
+  @IsObject()
   @Type(() => LocationDTO)
-  @IsArray()
-  @ArrayMinSize(1)
-  location: LocationDTO[];
+  location: LocationDTO;
 }

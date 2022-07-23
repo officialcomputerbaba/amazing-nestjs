@@ -1,0 +1,356 @@
+{
+	"info": {
+		"_postman_id": "bfab01a8-990b-420c-ad43-9eb88acd2d02",
+		"name": "LECTURE-27",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20484049"
+	},
+	"item": [
+		{
+			"name": "Jobs",
+			"item": [
+				{
+					"name": "Unrecognized Exception : Get Job By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/jobs/-11/unrecognized",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"jobs",
+								"-11",
+								"unrecognized"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Unrecognized Exception : Get Job By Id",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/jobs/-11/unrecognized",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"jobs",
+										"-11",
+										"unrecognized"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "52"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"34-rlKccw1E+/fV8niQk4oFitDfPro\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 23 Jul 2022 16:50:42 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 500,\n    \"message\": \"Internal server error\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Recognized Exception : Get Job By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/jobs/-11/recognized",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"jobs",
+								"-11",
+								"recognized"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Default Response: Recognized Error",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/jobs/0/recognized",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"jobs",
+										"0",
+										"recognized"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "41"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"29-gkE9iv4FTLHvQYHdT/fETdeRL8A\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 23 Jul 2022 16:51:58 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 400,\n    \"message\": \"Invalid id\"\n}"
+						},
+						{
+							"name": "Override Response: Recognized Error",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/jobs/-11/recognized",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"jobs",
+										"-11",
+										"recognized"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "96"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"60-QCVYCjB7qlphK9yv0UAmprzAPuM\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 23 Jul 2022 16:51:40 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"Invalid id\",\n    \"message\": \"Id must be higher than 0\",\n    \"timestamp\": 1658595100868,\n    \"data\": -11\n}"
+						}
+					]
+				},
+				{
+					"name": "Http-Based Exception: Get Job By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/jobs/-11/http-based",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"jobs",
+								"-11",
+								"http-based"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "400 Bad Request: Default Response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/jobs/-11/http-based",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"jobs",
+										"-11",
+										"http-based"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "81"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"51-h4wZyK+U6Zt1T9NIC9CkeDUiBmI\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 23 Jul 2022 16:53:34 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 400,\n    \"message\": \"Id must be higher than 0\",\n    \"error\": \"Id is not valid\"\n}"
+						},
+						{
+							"name": "400 Bad Request: Override Response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/jobs/0/http-based",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"jobs",
+										"0",
+										"http-based"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "81"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"51-h4wZyK+U6Zt1T9NIC9CkeDUiBmI\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 23 Jul 2022 16:53:56 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 400,\n    \"message\": \"Id must be higher than 0\",\n    \"error\": \"Id is not valid\"\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}

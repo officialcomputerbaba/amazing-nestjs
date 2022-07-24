@@ -1,0 +1,165 @@
+{
+	"info": {
+		"_postman_id": "6303c40c-b29c-457a-b69b-b8dbe7da07e0",
+		"name": "LECTURE-29",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20484049"
+	},
+	"item": [
+		{
+			"name": "Jobs",
+			"item": [
+				{
+					"name": "IdException (AppExceptionFilter Handler): Get Job By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/jobs/-11",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"jobs",
+								"-11"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "IdException Handle by AppExceptionFilter",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/jobs/-11",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"jobs",
+										"-11"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "91"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"5b-RmgW0oNop9goPoOS1ou0AUFlZJc\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 23 Jul 2022 17:21:27 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 500,\n    \"timestamp\": \"2022-07-23T17:21:27.566Z\",\n    \"message\": \"Internal Server Error\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Http-Based Exception (AppExceptionFilter Handler): Get Job By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/jobs/20",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"jobs",
+								"20"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "400 Bad Request (AppExceptionFilter Handler)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/jobs/20",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"jobs",
+										"20"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "80"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"50-rSaZmDCXdxaLRqKAc4c933d28dA\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 23 Jul 2022 17:22:42 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 400,\n    \"timestamp\": \"2022-07-23T17:22:42.950Z\",\n    \"message\": \"Invalid id\"\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}

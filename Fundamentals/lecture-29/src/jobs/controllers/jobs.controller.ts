@@ -14,7 +14,7 @@ export class JobsController {
   constructor(private readonly jobsService: JobsService) {}
 
   @Get(":id")
-  // both exceptions are handle by `AppExceptionFilter` marked global in `main.ts`
+  // both exceptions are handle by `AppExceptionFilter` marked global in `app.module.ts`
   findJobById(@Param("id", ParseIntPipe) id: number) {
     if (id <= 0) {
       throw new IdException("Invalid id");

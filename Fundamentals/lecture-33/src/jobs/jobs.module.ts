@@ -20,7 +20,7 @@ export class JobsModule implements NestModule {
   configure(consumer: MiddlewareConsumer) {
     consumer
       .apply(
-        // NOTE: `AuthMiddleware` is made global in `src/app.module.ts`
+        // NOTE: `AuthMiddleware` is made global in `src/main.ts`
         // AuthMiddleware,
         UserAgentMiddleware
       )

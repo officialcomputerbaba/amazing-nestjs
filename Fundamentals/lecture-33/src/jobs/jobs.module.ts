@@ -19,7 +19,11 @@ import { JobsController } from "./controllers/jobs.controller";
 export class JobsModule implements NestModule {
   configure(consumer: MiddlewareConsumer) {
     consumer
-      .apply(AuthMiddleware, UserAgentMiddleware)
+      .apply(
+        // NOTE: `AuthMiddleware` is made global in `src/app.module.ts`
+        // AuthMiddleware,
+        UserAgentMiddleware
+      )
       .forRoutes(JobsController, InterviewsController);
   }
 }

@@ -1,0 +1,662 @@
+{
+	"info": {
+		"_postman_id": "c8c00b8d-8cf8-4ae2-b3c0-fcc9772e6fc4",
+		"name": "LECTURE-32",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20484049"
+	},
+	"item": [
+		{
+			"name": "Jobs",
+			"item": [
+				{
+					"name": "Get Job Refs",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/jobs/refs",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"jobs",
+								"refs"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Job Refs",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/jobs/refs",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"jobs",
+										"refs"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "78"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"4e-sBcSSlBHJ82CogZqpLrevk4QIIE\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 05 Aug 2022 21:23:41 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Job refs list\",\n    \"userAgent\": \"PostmanRuntime/7.29.2\"\n}"
+						},
+						{
+							"name": "W/T UserAgent Middleware",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/jobs/refs",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"jobs",
+										"refs"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "42"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2a-+7skROrhqocQSZgpRoBldklJo44\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 05 Aug 2022 21:27:30 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Job refs list\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Post Job Refs",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/jobs/refs",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"jobs",
+								"refs"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Post Job Refs",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/jobs/refs",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"jobs",
+										"refs"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "80"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"50-JwF0KHZC9lTGiH4h0KsjIJmOxgA\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 05 Aug 2022 21:23:30 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Job ref created\",\n    \"userAgent\": \"PostmanRuntime/7.29.2\"\n}"
+						},
+						{
+							"name": "W/T UserAgent Middleware",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/jobs/refs",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"jobs",
+										"refs"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "44"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2c-mDNydMCPPt4eAwEnVOr5TMaIcBI\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 05 Aug 2022 21:28:22 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Job ref created\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Job",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/jobs/11",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"jobs",
+								"11"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update Job",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/jobs/11",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"jobs",
+										"11"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "87"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"57-pn538NPvHrUflXkaUq8158LHdCU\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 05 Aug 2022 21:25:03 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"jobId\": 11,\n    \"message\": \"Job updated\",\n    \"userAgent\": \"PostmanRuntime/7.29.2\"\n}"
+						},
+						{
+							"name": "W/T UserAgent Middleware",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/jobs/11",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"jobs",
+										"11"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "51"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"33-Qx6AvBzbElpeMsxIBTSLo2AGD8w\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 05 Aug 2022 21:28:36 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"jobId\": 11,\n    \"message\": \"Job updated\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Interviews",
+			"item": [
+				{
+					"name": "Get Interviews",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/interviews",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"interviews"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Interviews",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/interviews",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"interviews"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "79"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"4f-MoeV8V6oI2m/8dAnDCDM05E8NN0\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 05 Aug 2022 21:26:20 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Interview list\",\n    \"userAgent\": \"PostmanRuntime/7.29.2\"\n}"
+						},
+						{
+							"name": "W/T UserAgent Middleware",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/interviews",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"interviews"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "43"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2b-1FxPKyQa2TVag9HdXak5PELylro\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 05 Aug 2022 21:29:01 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Interview list\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Schedule Interview",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/interviews/schedule",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"interviews",
+								"schedule"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Schedule Interview",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/interviews/schedule",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"interviews",
+										"schedule"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "83"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"53-U9+nY7YicYwaJxxxO5iKRzWTigw\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 05 Aug 2022 21:26:52 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Inteview scheduled\",\n    \"userAgent\": \"PostmanRuntime/7.29.2\"\n}"
+						},
+						{
+							"name": "W/T UserAgent Middleware",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/interviews/schedule",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"interviews",
+										"schedule"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "47"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2f-MTmThCpgU3fHU8OJDaAkoX3TRc8\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 05 Aug 2022 21:29:11 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Inteview scheduled\"\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}

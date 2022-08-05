@@ -1,22 +1,22 @@
+import { MiddlewareConsumer, Module, NestModule } from "@nestjs/common";
 import {
-  MiddlewareConsumer,
-  Module,
-  NestModule,
-} from "@nestjs/common";
-import {
-  userAgent,
+  UserAgentMiddleware,
+  UserAgentOptions,
 } from "../middlewares/user-agent.middleware";
 import { InterviewsController } from "./controllers/interviews.controller";
 import { JobsController } from "./controllers/jobs.controller";
 
 @Module({
   controllers: [JobsController, InterviewsController],
+  providers: [
+    {
+      provide: UserAgentOptions,
+      useValue: { accepted: ["chrome", "firefox", "postman"] },
+    },
+  ],
 })
 export class JobsModule implements NestModule {
   configure(consumer: MiddlewareConsumer) {
-  
-    consumer
-      .apply(userAgent)
-      .forRoutes("jobs");
+    consumer.apply(UserAgentMiddleware).forRoutes("jobs");
   }
 }

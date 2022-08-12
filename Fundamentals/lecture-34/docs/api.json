@@ -1,0 +1,443 @@
+{
+	"info": {
+		"_postman_id": "e50d8b2a-3cef-424c-8584-246fa00a5b93",
+		"name": "LECTURE-34",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20484049"
+	},
+	"item": [
+		{
+			"name": "Jobs",
+			"item": [
+				{
+					"name": "Search Jobs",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/jobs/search?query=ro&token=user1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"jobs",
+								"search"
+							],
+							"query": [
+								{
+									"key": "query",
+									"value": "ro"
+								},
+								{
+									"key": "token",
+									"value": "user1"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Search Jobs",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/jobs/search?query=ro&token=user1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"jobs",
+										"search"
+									],
+									"query": [
+										{
+											"key": "query",
+											"value": "ro"
+										},
+										{
+											"key": "token",
+											"value": "user1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "81"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"51-2lIQR/LzVKD6O2pBm4QcebftOyc\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 12 Aug 2022 18:45:33 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"title\": \"Rocket man\",\n        \"location\": \"ISRO\"\n    },\n    {\n        \"title\": \"Ro Ranger\",\n        \"location\": \"Sea\"\n    }\n]"
+						},
+						{
+							"name": "503: Query Key length | Exception/Error Overriding",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/jobs/search?query=rapidfire&token=user1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"jobs",
+										"search"
+									],
+									"query": [
+										{
+											"key": "query",
+											"value": "rapidfire"
+										},
+										{
+											"key": "token",
+											"value": "user1"
+										}
+									]
+								}
+							},
+							"status": "Service Unavailable",
+							"code": 503,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "101"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"65-03+ZCgQXBgflt3vQ8cbnpfYEsjo\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 12 Aug 2022 19:07:16 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 503,\n    \"message\": \"Query key length cannot be higher than 5\",\n    \"error\": \"Service Unavailable\"\n}"
+						},
+						{
+							"name": "503: Query Key Exception from Service | Exception/Error Overriding",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/jobs/search?query=12&token=user1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"jobs",
+										"search"
+									],
+									"query": [
+										{
+											"key": "query",
+											"value": "12"
+										},
+										{
+											"key": "token",
+											"value": "user1"
+										}
+									]
+								}
+							},
+							"status": "Service Unavailable",
+							"code": 503,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "87"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"57-WrK+vBAxgIloQ5H0x7gRnGv2wHY\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 12 Aug 2022 18:52:11 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 503,\n    \"message\": \"Query key must be a string\",\n    \"error\": \"Service Unavailable\"\n}"
+						},
+						{
+							"name": "408: Request Timeout",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/jobs/search?query=so&token=user1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"jobs",
+										"search"
+									],
+									"query": [
+										{
+											"key": "query",
+											"value": "so"
+										},
+										{
+											"key": "token",
+											"value": "user1"
+										}
+									]
+								}
+							},
+							"status": "Request Timeout",
+							"code": 408,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "46"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2e-3Wt9o5ku2ygvggLevu8vzH4Gipg\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 12 Aug 2022 18:57:12 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 408,\n    \"message\": \"Request Timeout\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Recent Search",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/jobs/recent-search?token=user1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"jobs",
+								"recent-search"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "user1"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Without User Token",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/jobs/recent-search",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"jobs",
+										"recent-search"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2-l9Fw4VUO7kr8CvBlt4zaMCqXZ0w\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 12 Aug 2022 18:45:47 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[]"
+						},
+						{
+							"name": "Recent Search",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/jobs/recent-search?token=user1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"jobs",
+										"recent-search"
+									],
+									"query": [
+										{
+											"key": "token",
+											"value": "user1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "105"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"69-2c8TSfhNvfV4VYxCVKADCF+vkQ4\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 12 Aug 2022 18:46:06 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"query\": \"ro\",\n        \"list\": [\n            {\n                \"title\": \"Rocket man\",\n                \"location\": \"ISRO\"\n            },\n            {\n                \"title\": \"Ro Ranger\",\n                \"location\": \"Sea\"\n            }\n        ]\n    }\n]"
+						}
+					]
+				}
+			]
+		}
+	]
+}

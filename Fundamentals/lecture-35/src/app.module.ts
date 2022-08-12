@@ -5,6 +5,9 @@ import { JobsModule } from "./jobs/jobs.module";
 
 @Module({
   imports: [JobsModule],
-  providers: [{ provide: APP_INTERCEPTOR, useClass: LoggerInterceptor }],
+  providers: [
+    // NOTE: `LoggerInterceptor` made global inside `main.ts`
+    // { provide: APP_INTERCEPTOR, useClass: LoggerInterceptor }
+],
 })
 export class AppModule {}

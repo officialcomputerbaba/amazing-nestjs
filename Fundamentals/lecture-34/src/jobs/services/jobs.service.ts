@@ -23,6 +23,14 @@ export class JobsService {
       return title.includes(searchKey) || loc.includes(searchKey);
     });
 
+    // NOTE: The below condition is only for demonstrating a `Request Timeout`
+    // send `so` in query to trigger the condition
+    if (searchKey.includes("so")) {
+      return new Promise((resolve) => {
+        setTimeout(() => resolve(jobs), 7000);
+      });
+    }
+
     return jobs;
   }
 }

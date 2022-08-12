@@ -4,9 +4,10 @@ import {
     ExecutionContext,
     CallHandler,
     ServiceUnavailableException,
+    RequestTimeoutException
   } from "@nestjs/common";
-  import { of, throwError } from "rxjs";
-  import { tap, catchError } from "rxjs/operators";
+  import { of, throwError, TimeoutError } from "rxjs";
+  import { tap, catchError, timeout } from "rxjs/operators";
   import { Job } from "../interfaces/job.class";
   import { RecentSearchService } from "../services/recent-search.service";
   
@@ -38,12 +39,19 @@ import {
       console.log("[RecentSearchInterceptor]: Sending Non-Cached list");
   
       return next.handle().pipe(
+        timeout(5000),
         tap((list: Job[]) => {
           if (token && query?.trim().length) {
             this.recentSearchService.addRecentSerach(token, query, list);
           }
         }),
         catchError((err) => {
+          // if error is `TimeoutError`
+          if (err instanceof TimeoutError) {
+            return throwError(() => new RequestTimeoutException());
+          }
+  
+          // if unknown or something differnt error
           return throwError(() => new ServiceUnavailableException(err?.message));
         })
       );

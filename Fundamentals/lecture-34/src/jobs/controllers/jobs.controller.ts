@@ -13,6 +13,10 @@ export class JobsController {
   @Get("search")
   @UseInterceptors(RecentSearchInterceptor)
   search(@Query("query") query: string) {
+    if (query?.length > 5) {
+      throw new Error("Query key length cannot be higher than 5");
+    }
+
     return this.jobsService.search(query || "");
   }
 

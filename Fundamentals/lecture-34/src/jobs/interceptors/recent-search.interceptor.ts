@@ -3,9 +3,10 @@ import {
     NestInterceptor,
     ExecutionContext,
     CallHandler,
+    ServiceUnavailableException,
   } from "@nestjs/common";
-  import { of } from "rxjs";
-  import { tap } from "rxjs/operators";
+  import { of, throwError } from "rxjs";
+  import { tap, catchError } from "rxjs/operators";
   import { Job } from "../interfaces/job.class";
   import { RecentSearchService } from "../services/recent-search.service";
   
@@ -41,6 +42,9 @@ import {
           if (token && query?.trim().length) {
             this.recentSearchService.addRecentSerach(token, query, list);
           }
+        }),
+        catchError((err) => {
+          return throwError(() => new ServiceUnavailableException(err?.message));
         })
       );
     }

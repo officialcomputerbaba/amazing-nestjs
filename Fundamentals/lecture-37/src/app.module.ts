@@ -7,11 +7,13 @@ import { UsersModule } from "./users/users.module";
 // import { CRON_CONFIG } from "./config/cron.config";
 // import { JWT_CONFIG } from "./config/jwt.config";
 import configuration from "./config/configuration";
+import { AdminModule } from "./admin/admin.module";
 
 @Module({
   imports: [
     JobsModule,
     UsersModule,
+    AdminModule,
     ConfigModule.forRoot({
       //   load: [APP_CONFIG, DATABASE_CONFIG, CRON_CONFIG, JWT_CONFIG],
       load: configuration,

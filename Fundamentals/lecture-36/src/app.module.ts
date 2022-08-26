@@ -4,6 +4,12 @@ import { JobsModule } from "./jobs/jobs.module";
 import { UsersModule } from "./users/users.module";
 
 @Module({
-  imports: [JobsModule, UsersModule, ConfigModule.forRoot()],
+  imports: [
+    JobsModule,
+    UsersModule,
+    ConfigModule.forRoot({
+      envFilePath: [".env", ".dev.env"],
+    }),
+  ],
 })
 export class AppModule {}

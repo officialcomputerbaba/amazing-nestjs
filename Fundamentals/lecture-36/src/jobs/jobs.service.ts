@@ -7,7 +7,7 @@ export class JobsService {
     // app config
     const url = this.configService.get<string>("APP_URL");
     const isProd = this.configService.get<boolean>("PROD");
-    const supportEmail = this.configService.get<string>("SUPPORT_EMAIL");
+    const supportEmail = this.configService.get<string>("SUPPORT_EMAIL"); // expanded variable
     const isSSL = this.configService.get<boolean>("isSSL", false);
 
     console.log("\n[JobsService]: App config");

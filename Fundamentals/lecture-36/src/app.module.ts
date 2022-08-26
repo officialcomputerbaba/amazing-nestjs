@@ -8,7 +8,8 @@ import { UsersModule } from "./users/users.module";
     JobsModule,
     UsersModule,
     ConfigModule.forRoot({
-      envFilePath: [".env", ".dev.env"],
+      cache: true, // enable caching of environment variables
+      expandVariables: true, // enable expand variables in ".env" file
     }),
   ],
 })

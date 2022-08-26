@@ -1,9 +1,8 @@
 import { Module } from "@nestjs/common";
-import { ConfigModule } from "@nestjs/config";
 import { JobsService } from "./jobs.service";
 
 @Module({
-  imports: [ConfigModule],
+  imports: [],
   providers: [JobsService],
 })
 export class JobsModule {}

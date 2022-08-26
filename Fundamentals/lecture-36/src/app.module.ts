@@ -10,6 +10,7 @@ import { UsersModule } from "./users/users.module";
     ConfigModule.forRoot({
       cache: true, // enable caching of environment variables
       expandVariables: true, // enable expand variables in ".env" file
+      isGlobal: true, // available globally within the application without importing into modules
     }),
   ],
 })

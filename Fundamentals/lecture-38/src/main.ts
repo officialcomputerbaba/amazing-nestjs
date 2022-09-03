@@ -1,22 +1,26 @@
 import { NestFactory } from "@nestjs/core";
-import { FastifyAdapter } from "@nestjs/platform-fastify";
+import { ExpressAdapter } from "@nestjs/platform-express";
 import { AppModule } from "./app.module";
 import { readFileSync } from "fs";
 import { resolve } from "path";
+import { createServer as createHttpServer } from "http";
+import { createServer as createHttpsServer } from "https";
+import * as express from "express";
 
 async function bootstrap() {
-  const httpsOptions = {
-    key: readFileSync(resolve(__dirname, "../cert/private.key")),
-    cert: readFileSync(resolve(__dirname, "../cert/public.cert")),
-  };
+  const server = express();
+  const app = await NestFactory.create(AppModule, new ExpressAdapter(server));
 
-  const app = await NestFactory.create(
-    AppModule,
-    new FastifyAdapter({
-      https: httpsOptions,
-    })
-  );
+  await app.init();
 
-  await app.listen(443);
+  createHttpServer(server).listen(3000);
+  
+  createHttpsServer(
+    {
+      key: readFileSync(resolve(__dirname, "../cert/private.key")),
+      cert: readFileSync(resolve(__dirname, "../cert/public.cert")),
+    },
+    server
+  ).listen(443);
 }
 bootstrap();

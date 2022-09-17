@@ -1,15 +1,8 @@
 import { Module } from "@nestjs/common";
 import { ConfigModule } from "@nestjs/config";
-import { MongooseModule } from "@nestjs/mongoose";
-import { MongooseConfigService } from "./mongoose-config.service";
+import { DatabaseModule } from "./infra/mongoose/database.module";
 
 @Module({
-  imports: [
-    ConfigModule.forRoot({ isGlobal: true }),
-    MongooseModule.forRootAsync({
-        imports: [ConfigModule], // no need to import if ConfigModule is global true
-        useClass: MongooseConfigService,
-      }),
-  ],
+  imports: [ConfigModule.forRoot({ isGlobal: true }), DatabaseModule],
 })
 export class AppModule {}

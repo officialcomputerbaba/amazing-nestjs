@@ -1,0 +1,780 @@
+{
+	"info": {
+		"_postman_id": "74371fe2-093c-4cc1-9b9f-bd9010ec1fc9",
+		"name": "LECTURE-43",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20484049"
+	},
+	"item": [
+		{
+			"name": "Jobs",
+			"item": [
+				{
+					"name": "Create Job",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userId\": \"62ec43e23c09fe18a93ca252\",\n    \"companyName\": \"Marvel Studios\",\n    \"title\": \"VFX Artist\",\n    \"description\": \"the best artist\",\n    \"experience\": 10,\n    \"tags\": [\"marvel\", \"movies\"],\n    \"salary\": \"25000 USD\",\n    \"type\": \"FULL_TIME\",\n    \"location\": {\n        \"address1\": \"TVA\",\n        \"address2\": \"Wakanda\",\n        \"city\": \"Universe\",\n        \"state\": \"Space\",\n        \"country\": \"Multiverse\",\n        \"zipCode\": \"000111\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/jobs",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"jobs"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "403 Forbidden: Create Job",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"userId\": \"62ec3a9c764516150f1e5594\",\n    \"companyName\": \"Marvel Studios\",\n    \"title\": \"VFX Artist\",\n    \"description\": \"the best artist\",\n    \"experience\": 10,\n    \"tags\": [\"marvel\", \"movies\"],\n    \"salary\": \"25000 USD\",\n    \"type\": \"FULL_TIME\",\n    \"location\": {\n        \"address1\": \"TVA\",\n        \"address2\": \"Wakanda\",\n        \"city\": \"Universe\",\n        \"state\": \"Space\",\n        \"country\": \"Multiverse\",\n        \"zipCode\": \"000111\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/jobs",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"jobs"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "79"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"4f-g446MCLXHrEpsLJLxkQ3LtSi5UQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 04 Aug 2022 22:09:54 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 403,\n    \"message\": \"Only employer can create job\",\n    \"error\": \"Forbidden\"\n}"
+						},
+						{
+							"name": "Validation Error: Create Job",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"userId\": \"62ec3a9c764516150f1e5594\",\n    \"companyName\": \"Marvel Studios\",\n    \"description\": \"the best artist\",\n    \"experience\": 10,\n    \"tags\": [\"marvel\", \"movies\"],\n    \"type\": \"FULL_TIME\",\n    \"location\": {\n        \"address1\": \"TVA\",\n        \"address2\": \"Wakanda\",\n        \"city\": \"Universe\",\n        \"state\": \"Space\",\n        \"country\": \"Multiverse\",\n        \"zipCode\": \"000111\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/jobs",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"jobs"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "105"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"69-I1OopYP92A1S+ctHNFX1NnU9DNM\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 04 Aug 2022 22:10:21 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 400,\n    \"message\": [\n        \"title should not be empty\",\n        \"title must be a string\"\n    ],\n    \"error\": \"Bad Request\"\n}"
+						},
+						{
+							"name": "Create Job",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"userId\": \"62ec43e23c09fe18a93ca252\",\n    \"companyName\": \"Marvel Studios\",\n    \"title\": \"VFX Artist\",\n    \"description\": \"the best artist\",\n    \"experience\": 10,\n    \"tags\": [\"marvel\", \"movies\"],\n    \"salary\": \"25000 USD\",\n    \"type\": \"FULL_TIME\",\n    \"location\": {\n        \"address1\": \"TVA\",\n        \"address2\": \"Wakanda\",\n        \"city\": \"Universe\",\n        \"state\": \"Space\",\n        \"country\": \"Multiverse\",\n        \"zipCode\": \"000111\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/jobs",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"jobs"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "485"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1e5-2qNm3PQ+JkA8vF5prtlSa5Im8S4\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 04 Aug 2022 22:11:14 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"employer\": \"62ec43e23c09fe18a93ca252\",\n    \"companyName\": \"Marvel Studios\",\n    \"title\": \"VFX Artist\",\n    \"description\": \"the best artist\",\n    \"experience\": 10,\n    \"tags\": [\n        \"marvel\",\n        \"movies\"\n    ],\n    \"salary\": \"25000 USD\",\n    \"type\": \"FULL_TIME\",\n    \"location\": {\n        \"address1\": \"TVA\",\n        \"address2\": \"Wakanda\",\n        \"city\": \"Universe\",\n        \"country\": \"Multiverse\",\n        \"state\": \"Space\",\n        \"zipCode\": \"000111\",\n        \"_id\": \"62ec44023c09fe18a93ca25a\"\n    },\n    \"_id\": \"62ec44023c09fe18a93ca259\",\n    \"createdAt\": \"2022-08-04T22:11:14.332Z\",\n    \"updatedAt\": \"2022-08-04T22:11:14.332Z\",\n    \"__v\": 0\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Job",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/jobs/62ec44023c09fe18a93ca259",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"jobs",
+								"62ec44023c09fe18a93ca259"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "404 Not Found: Get Job",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/jobs/62ec43e23c09fe18a93ca252",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"jobs",
+										"62ec43e23c09fe18a93ca252"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "64"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"40-NLzls/O8q5Y3tZT9BhkR/fmZU8Q\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 04 Aug 2022 22:11:45 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 404,\n    \"message\": \"Job not found\",\n    \"error\": \"Not Found\"\n}"
+						},
+						{
+							"name": "Get Job",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/jobs/62ec44023c09fe18a93ca259",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"jobs",
+										"62ec44023c09fe18a93ca259"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "485"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1e5-1FPS3X6b1lsYQWoTFBmQEciYEFY\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 04 Aug 2022 22:12:23 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"_id\": \"62ec44023c09fe18a93ca259\",\n    \"employer\": \"62ec43e23c09fe18a93ca252\",\n    \"companyName\": \"Marvel Studios\",\n    \"title\": \"VFX Artist\",\n    \"description\": \"the best artist\",\n    \"experience\": 10,\n    \"tags\": [\n        \"marvel\",\n        \"movies\"\n    ],\n    \"salary\": \"25000 USD\",\n    \"type\": \"FULL_TIME\",\n    \"location\": {\n        \"address1\": \"TVA\",\n        \"address2\": \"Wakanda\",\n        \"city\": \"Universe\",\n        \"country\": \"Multiverse\",\n        \"state\": \"Space\",\n        \"zipCode\": \"000111\",\n        \"_id\": \"62ec44023c09fe18a93ca25a\"\n    },\n    \"createdAt\": \"2022-08-04T22:11:14.332Z\",\n    \"updatedAt\": \"2022-08-04T22:11:14.332Z\",\n    \"__v\": 0\n}"
+						}
+					]
+				},
+				{
+					"name": "Get All Jobs",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/jobs",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"jobs"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get All Jobs",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/jobs",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"jobs"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "487"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1e7-6gDmS3o5OESTT8YNI1PgWTrAzdA\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 04 Aug 2022 22:12:49 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"_id\": \"62ec44023c09fe18a93ca259\",\n        \"employer\": \"62ec43e23c09fe18a93ca252\",\n        \"companyName\": \"Marvel Studios\",\n        \"title\": \"VFX Artist\",\n        \"description\": \"the best artist\",\n        \"experience\": 10,\n        \"tags\": [\n            \"marvel\",\n            \"movies\"\n        ],\n        \"salary\": \"25000 USD\",\n        \"type\": \"FULL_TIME\",\n        \"location\": {\n            \"address1\": \"TVA\",\n            \"address2\": \"Wakanda\",\n            \"city\": \"Universe\",\n            \"country\": \"Multiverse\",\n            \"state\": \"Space\",\n            \"zipCode\": \"000111\",\n            \"_id\": \"62ec44023c09fe18a93ca25a\"\n        },\n        \"createdAt\": \"2022-08-04T22:11:14.332Z\",\n        \"updatedAt\": \"2022-08-04T22:11:14.332Z\",\n        \"__v\": 0\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Update Job",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userId\": \"62ec43e23c09fe18a93ca252\",\n    \"companyName\": \"Marvel Studios\",\n    \"title\": \"Hero\",\n    \"description\": \"the best hero\",\n    \"experience\": 10,\n    \"tags\": [\"marvel\", \"movies\"],\n    \"salary\": \"25000 USD\",\n    \"type\": \"FULL_TIME\",\n    \"location\": {\n        \"address1\": \"TVA\",\n        \"address2\": \"Wakanda\",\n        \"city\": \"Universe\",\n        \"state\": \"Space\",\n        \"country\": \"Multiverse\",\n        \"zipCode\": \"000111\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/jobs/62ec44023c09fe18a93da259",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"jobs",
+								"62ec44023c09fe18a93da259"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update Job",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"userId\": \"62ec43e23c09fe18a93ca252\",\n    \"companyName\": \"Marvel Studios\",\n    \"title\": \"Hero\",\n    \"description\": \"the best hero\",\n    \"experience\": 10,\n    \"tags\": [\"marvel\", \"movies\"],\n    \"salary\": \"25000 USD\",\n    \"type\": \"FULL_TIME\",\n    \"location\": {\n        \"address1\": \"TVA\",\n        \"address2\": \"Wakanda\",\n        \"city\": \"Universe\",\n        \"state\": \"Space\",\n        \"country\": \"Multiverse\",\n        \"zipCode\": \"000111\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/jobs/62ec44023c09fe18a93ca259",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"jobs",
+										"62ec44023c09fe18a93ca259"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "477"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1dd-PwTrp8PtIwrlAbVM4PH3Vtei+P8\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 04 Aug 2022 22:16:40 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"_id\": \"62ec44023c09fe18a93ca259\",\n    \"employer\": \"62ec43e23c09fe18a93ca252\",\n    \"companyName\": \"Marvel Studios\",\n    \"title\": \"Hero\",\n    \"description\": \"the best hero\",\n    \"experience\": 10,\n    \"tags\": [\n        \"marvel\",\n        \"movies\"\n    ],\n    \"salary\": \"25000 USD\",\n    \"type\": \"FULL_TIME\",\n    \"location\": {\n        \"address1\": \"TVA\",\n        \"address2\": \"Wakanda\",\n        \"city\": \"Universe\",\n        \"country\": \"Multiverse\",\n        \"state\": \"Space\",\n        \"zipCode\": \"000111\",\n        \"_id\": \"62ec4548a5a35476a749d946\"\n    },\n    \"createdAt\": \"2022-08-04T22:11:14.332Z\",\n    \"updatedAt\": \"2022-08-04T22:16:40.007Z\",\n    \"__v\": 0\n}"
+						},
+						{
+							"name": "404 Not Found: Update Job",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"userId\": \"62ec43e23c09fe18a93ca252\",\n    \"companyName\": \"Marvel Studios\",\n    \"title\": \"Hero\",\n    \"description\": \"the best hero\",\n    \"experience\": 10,\n    \"tags\": [\"marvel\", \"movies\"],\n    \"salary\": \"25000 USD\",\n    \"type\": \"FULL_TIME\",\n    \"location\": {\n        \"address1\": \"TVA\",\n        \"address2\": \"Wakanda\",\n        \"city\": \"Universe\",\n        \"state\": \"Space\",\n        \"country\": \"Multiverse\",\n        \"zipCode\": \"000111\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/jobs/62ec44023c09fe18a93da259",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"jobs",
+										"62ec44023c09fe18a93da259"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "64"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"40-NLzls/O8q5Y3tZT9BhkR/fmZU8Q\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 04 Aug 2022 22:17:38 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 404,\n    \"message\": \"Job not found\",\n    \"error\": \"Not Found\"\n}"
+						},
+						{
+							"name": "Validation Errors: Update Job",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"userId\": \"62ec43e23c09fe18a93ca252\",\n    \"companyName\": \"Marvel Studios\",\n    \"title\": \"Hero\",\n    \"description\": \"the best hero\",\n    \"experience\": 10,\n    \"tags\": [\"marvel\", \"movies\"],\n    \"salary\": \"25000 USD\",\n    \"type\": \"FULL_TIME\",\n    \"location\": {\n        \"address1\": \"TVA\",\n        \"address2\": \"Wakanda\",\n        \"city\": \"Universe\",\n        \"state\": \"Space\",\n        \"country\": \"Multiverse\",\n        \"zipCode\": \"000111\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/jobs/62ec44023c09fe18a93da259",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"jobs",
+										"62ec44023c09fe18a93da259"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "127"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"7f-4XlWHaWJBSiPxGVQAQH6pGOUoyU\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 04 Aug 2022 22:18:02 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 400,\n    \"message\": [\n        \"location.country should not be empty\",\n        \"location.country must be a string\"\n    ],\n    \"error\": \"Bad Request\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Job",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/jobs/62ec44713c09fe18a93ca263",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"jobs",
+								"62ec44713c09fe18a93ca263"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "404 Not Found: Delete Job",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/jobs/62ec44023c09fe18a93da259",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"jobs",
+										"62ec44023c09fe18a93da259"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "64"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"40-NLzls/O8q5Y3tZT9BhkR/fmZU8Q\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 04 Aug 2022 22:18:56 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 404,\n    \"message\": \"Job not found\",\n    \"error\": \"Not Found\"\n}"
+						},
+						{
+							"name": "Delete Job",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/jobs/62ec44713c09fe18a93ca263",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"jobs",
+										"62ec44713c09fe18a93ca263"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "34"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"22-3zNfB6xdVOOh0N2CqqxnX51iWXE\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 04 Aug 2022 22:19:33 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"_id\": \"62ec44713c09fe18a93ca263\"\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}

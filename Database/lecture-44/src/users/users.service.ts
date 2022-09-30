@@ -37,6 +37,12 @@ export class UsersService {
     }
   }
 
+  async search(name: string) {
+    const users: UserDocument[] = await this.userModel.find().byName(name);
+
+    return users;
+  }
+
   async findAll() {
     const users = await this.userModel.find();
 

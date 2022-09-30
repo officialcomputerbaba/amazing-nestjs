@@ -25,6 +25,11 @@ export class UsersController {
     return this.usersService.login(accountLoginDto);
   }
 
+  @Get("search")
+  findByName(@Query("name") name: string) {
+    return this.usersService.search(name);
+  }
+
   @Get()
   findAll() {
     return this.usersService.findAll();

@@ -1,4 +1,4 @@
-import { Model } from "mongoose";
+import { Model, Query, HydratedDocument } from "mongoose";
 import { Prop, Schema, SchemaFactory, raw } from "@nestjs/mongoose";
 import { ACCOUNT_STATUS, ACCOUNT_TYPE } from "../../constants";
 import { AddressSchema, Address } from "../common/address.schema";
@@ -11,7 +11,7 @@ import { hash, compare } from "bcrypt";
       const hashedPassword = this.password;
       const isMatched = await compare(candidatePassword, hashedPassword);
       return isMatched;
-    }
+    },
   },
   statics: {
     async findByEmailAndPassword(
@@ -28,6 +28,11 @@ import { hash, compare } from "bcrypt";
       if (!isPwdMatched) return;
 
       return user;
+    },
+  },
+  query: {
+    byName(this: UserModelQuery, name: string) {
+      return this.where({ name: new RegExp(name, "i") });
     },
   },
 })
@@ -86,7 +91,18 @@ export class User {
 
 export type UserDocument = User & Document;
 
-export interface IUserModel extends Model<UserDocument> {
+export type UserModelQuery = Query<
+  any,
+  HydratedDocument<User>, // UserDocument
+  IUserQueryHelpers
+> &
+  IUserQueryHelpers; // chaining
+
+export interface IUserQueryHelpers {
+  byName(this: UserModelQuery, name: string): UserModelQuery;
+}
+
+export interface IUserModel extends Model<UserDocument, IUserQueryHelpers> {
   findByEmailAndPassword: (
     email: string,
     password: string

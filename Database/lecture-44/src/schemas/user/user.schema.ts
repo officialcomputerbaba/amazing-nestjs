@@ -5,6 +5,13 @@ import { hash, compare } from "bcrypt";
 
 @Schema({
   timestamps: true,
+  methods: {
+    async isValidPassword(this: UserDocument, candidatePassword: string) {
+      const hashedPassword = this.password;
+      const isMatched = await compare(candidatePassword, hashedPassword);
+      return isMatched;
+    },
+  },
 })
 export class User {
   @Prop({ required: true })
@@ -54,6 +61,9 @@ export class User {
     })
   )
   metadata: Record<string, any> | any;
+
+  // NOTE: Document instance method
+  isValidPassword: (candidatePassword: string) => Promise<boolean>;
 }
 
 export type UserDocument = User & Document;

@@ -1,6 +1,7 @@
 import { Prop, Schema, SchemaFactory, raw } from "@nestjs/mongoose";
 import { ACCOUNT_STATUS, ACCOUNT_TYPE } from "../../constants";
 import { AddressSchema, Address } from "../common/address.schema";
+import { hash, compare } from "bcrypt";
 
 @Schema({
   timestamps: true,
@@ -26,7 +27,7 @@ export class User {
     enum: Object.keys(ACCOUNT_STATUS),
     default: ACCOUNT_STATUS.ACTIVE,
   })
-  status?: ACCOUNT_TYPE; 
+  status?: ACCOUNT_TYPE;
 
   @Prop({
     type: String,
@@ -60,3 +61,9 @@ export type UserDocument = User & Document;
 export const USER_MODEL = User.name; // User
 
 export const UserSchema = SchemaFactory.createForClass(User);
+
+UserSchema.pre("save", async function (next: Function) {
+  const hashedPassword = await hash(this.password, 10);
+  this.password = hashedPassword;
+  next();
+});

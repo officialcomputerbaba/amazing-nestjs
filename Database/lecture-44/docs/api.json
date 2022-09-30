@@ -1,0 +1,1794 @@
+{
+	"info": {
+		"_postman_id": "1a8e120e-c7e4-4c93-85ff-3bcf92e4410d",
+		"name": "LECTURE-44",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20484049"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Create User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Noah\",\n    \"email\": \"noah@mail.com\",\n    \"password\": \"1234567890\",\n    \"age\": 10,\n    \"phone\": \"1999888666\",\n    \"accountType\": \"STUDENT\",\n    \"social\": [\n        \"akacomputerbaba\",\n        \"https://www.youtube.com/c/ComputerBabaOfficial\"\n    ],\n    \"address\": {\n        \"address1\": \"Heart\",\n        \"address2\": \"Street\",\n        \"city\": \"Everywhere\",\n        \"state\": \"Love\",\n        \"country\": \"India\",\n        \"zipCode\": \"021000\"\n    },\n    \"metadata\": { \"reference\": \"youtube\", \"beta\": true }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create User",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Noah\",\n    \"email\": \"noah@mail.com\",\n    \"password\": \"1234567890\",\n    \"age\": 10,\n    \"phone\": \"1999888666\",\n    \"accountType\": \"STUDENT\",\n    \"social\": [\n        \"akacomputerbaba\",\n        \"https://www.youtube.com/c/ComputerBabaOfficial\"\n    ],\n    \"address\": {\n        \"address1\": \"Heart\",\n        \"address2\": \"Street\",\n        \"city\": \"Everywhere\",\n        \"state\": \"Love\",\n        \"country\": \"India\",\n        \"zipCode\": \"021000\"\n    },\n    \"metadata\": { \"reference\": \"youtube\", \"beta\": true }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/users",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"users"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "544"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"220-yDFfzedI5xKsSeEWMFfLOcbYZgU\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 04 Aug 2022 20:59:29 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"name\": \"Noah\",\n    \"email\": \"noah@mail.com\",\n    \"password\": \"$2b$10$.4wdzbHxQXfJ2T2jjXxpxuYyeyoH6Ly32hbLf9GiS2plBNsHWITb6\",\n    \"age\": 10,\n    \"phone\": \"1999888666\",\n    \"status\": \"ACTIVE\",\n    \"accountType\": \"STUDENT\",\n    \"social\": [\n        \"akacomputerbaba\",\n        \"https://www.youtube.com/c/ComputerBabaOfficial\"\n    ],\n    \"isEmailVerified\": false,\n    \"address\": {\n        \"address1\": \"Heart\",\n        \"address2\": \"Street\",\n        \"city\": \"Everywhere\",\n        \"country\": \"India\",\n        \"state\": \"Love\",\n        \"zipCode\": \"021000\",\n        \"_id\": \"63372e9630de1470701b1697\"\n    },\n    \"metadata\": {\n        \"reference\": \"youtube\",\n        \"beta\": true\n    },\n    \"_id\": \"63372e9630de1470701b1696\",\n    \"createdAt\": \"2022-09-30T17:59:50.814Z\",\n    \"updatedAt\": \"2022-09-30T17:59:50.814Z\",\n    \"__v\": 0\n}"
+						},
+						{
+							"name": "Validation Errors: Create User",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Ajit\",\n    \"email\": \"ajit@mail.com\",\n    \"password\": \"1234567890\",\n    \"age\": 10,\n    \"phone\": \"1999888666\",\n    \"social\": [\n        \"akacomputerbaba\",\n        \"https://www.youtube.com/c/ComputerBabaOfficial\"\n    ],\n    \"metadata\": { \"reference\": \"youtube\", \"beta\": true }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/users",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"users"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "157"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"9d-TLFHFS6BFFe6Pr96qX0XmFeni2M\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 04 Aug 2022 22:08:32 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 400,\n    \"message\": [\n        \"accountType should not be empty\",\n        \"accountType must be a valid enum value\",\n        \"address should not be empty\"\n    ],\n    \"error\": \"Bad Request\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get User",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/users/62ec3331b70a577f9d0f7e99",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"62ec3331b70a577f9d0f7e99"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get User",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/users/62ec3331b70a577f9d0f7e99",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"users",
+										"62ec3331b70a577f9d0f7e99"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "520"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"208-SEiD3y2ttASvTM6inmsAR3DP1qY\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 04 Aug 2022 21:00:43 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"metadata\": {\n        \"reference\": \"youtube\",\n        \"beta\": true\n    },\n    \"_id\": \"62ec3331b70a577f9d0f7e99\",\n    \"name\": \"Ajit\",\n    \"email\": \"ajit@mail.com\",\n    \"age\": 10,\n    \"phone\": \"1999888666\",\n    \"status\": \"ACTIVE\",\n    \"accountType\": \"STUDENT\",\n    \"social\": [\n        \"akacomputerbaba\",\n        \"https://www.youtube.com/c/ComputerBabaOfficial\"\n    ],\n    \"isEmailVerified\": false,\n    \"address\": {\n        \"address1\": \"Heart\",\n        \"address2\": \"Street\",\n        \"city\": \"Everywhere\",\n        \"country\": \"India\",\n        \"zipCode\": \"021000\",\n        \"_id\": \"62ec3331b70a577f9d0f7e9a\"\n    },\n    \"createdAt\": \"2022-08-04T20:59:29.511Z\",\n    \"updatedAt\": \"2022-08-04T20:59:29.511Z\",\n    \"__v\": 0\n}"
+						},
+						{
+							"name": "404 Not Found: Get User",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/users/62ec3331b70a577f9d0fde99",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"users",
+										"62ec3331b70a577f9d0fde99"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "65"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"41-Oo0Y+Yi1j4RemFP/Rhn7H7ZfWN4\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 04 Aug 2022 21:01:29 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 404,\n    \"message\": \"User not found\",\n    \"error\": \"Not Found\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get All Users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get All Users",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/users",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"users"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "522"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"20a-332Hm5MKvgfU8PIxQz9EZFuwBwk\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 04 Aug 2022 21:01:09 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"metadata\": {\n            \"reference\": \"youtube\",\n            \"beta\": true\n        },\n        \"_id\": \"62ec3331b70a577f9d0f7e99\",\n        \"name\": \"Ajit\",\n        \"email\": \"ajit@mail.com\",\n        \"age\": 10,\n        \"phone\": \"1999888666\",\n        \"status\": \"ACTIVE\",\n        \"accountType\": \"STUDENT\",\n        \"social\": [\n            \"akacomputerbaba\",\n            \"https://www.youtube.com/c/ComputerBabaOfficial\"\n        ],\n        \"isEmailVerified\": false,\n        \"address\": {\n            \"address1\": \"Heart\",\n            \"address2\": \"Street\",\n            \"city\": \"Everywhere\",\n            \"country\": \"India\",\n            \"zipCode\": \"021000\",\n            \"_id\": \"62ec3331b70a577f9d0f7e9a\"\n        },\n        \"createdAt\": \"2022-08-04T20:59:29.511Z\",\n        \"updatedAt\": \"2022-08-04T20:59:29.511Z\",\n        \"__v\": 0\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Update User",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Ajit Baba\",\n    \"email\": \"ajit@mail.com\",\n    \"password\": \"1234567890\",\n    \"age\": 10,\n    \"phone\": \"1999888666\",\n    \"social\": [\n        \"akacomputerbaba\",\n        \"https://www.youtube.com/c/ComputerBabaOfficial\"\n    ],\n    \"address\": {\n        \"address1\": \"Heart\",\n        \"address2\": \"Street\",\n        \"city\": \"Everywhere\",\n        \"state\": \"Love\",\n        \"country\": \"India\",\n        \"zipCode\": \"021000\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/users/62ec3331b70a577f9d0f7e99",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"62ec3331b70a577f9d0f7e99"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update User",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Ajit Baba\",\n    \"email\": \"ajit@mail.com\",\n    \"password\": \"1234567890\",\n    \"age\": 10,\n    \"phone\": \"1999888666\",\n    \"social\": [\n        \"akacomputerbaba\",\n        \"https://www.youtube.com/c/ComputerBabaOfficial\"\n    ],\n    \"address\": {\n        \"address1\": \"Heart\",\n        \"address2\": \"Street\",\n        \"state\": \"Love\",\n        \"city\": \"Everywhere\",\n        \"country\": \"India\",\n        \"zipCode\": \"021000\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/users/62ec3331b70a577f9d0f7e99",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"users",
+										"62ec3331b70a577f9d0f7e99"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "525"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"20d-RzTrFB2+qGzOnd+fSPASeqymugE\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 04 Aug 2022 21:03:04 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"metadata\": {\n        \"reference\": \"youtube\",\n        \"beta\": true\n    },\n    \"_id\": \"62ec3331b70a577f9d0f7e99\",\n    \"name\": \"Ajit Baba\",\n    \"email\": \"ajit@mail.com\",\n    \"age\": 10,\n    \"phone\": \"1999888666\",\n    \"status\": \"ACTIVE\",\n    \"accountType\": \"STUDENT\",\n    \"social\": [\n        \"akacomputerbaba\",\n        \"https://www.youtube.com/c/ComputerBabaOfficial\"\n    ],\n    \"isEmailVerified\": false,\n    \"address\": {\n        \"address1\": \"Heart\",\n        \"address2\": \"Street\",\n        \"city\": \"Everywhere\",\n        \"state\": \"Love\",\n        \"country\": \"India\",\n        \"zipCode\": \"021000\",\n        \"_id\": \"62ec3331b70a577f9d0f7e9a\"\n    },\n    \"createdAt\": \"2022-08-04T20:59:29.511Z\",\n    \"updatedAt\": \"2022-08-04T21:03:04.602Z\",\n    \"__v\": 0\n}"
+						},
+						{
+							"name": "404 Not Found: Update User",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Ajit Baba\",\n    \"email\": \"ajit@mail.com\",\n    \"password\": \"1234567890\",\n    \"age\": 10,\n    \"phone\": \"1999888666\",\n    \"social\": [\n        \"akacomputerbaba\",\n        \"https://www.youtube.com/c/ComputerBabaOfficial\"\n    ],\n    \"address\": {\n        \"address1\": \"Heart\",\n        \"address2\": \"Street\",\n        \"city\": \"Everywhere\",\n        \"state\": \"Love\",\n        \"country\": \"India\",\n        \"zipCode\": \"021000\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/users/62ec3331b70a577f9d0f7d99",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"users",
+										"62ec3331b70a577f9d0f7d99"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "69"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"45-eaAnAZHr4lUtGPt1CVk3f+FTvwg\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 04 Aug 2022 21:02:34 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 404,\n    \"message\": \"User not not found\",\n    \"error\": \"Not Found\"\n}"
+						},
+						{
+							"name": "Validation Errors: Update User",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Ajit Baba\",\n    \"email\": \"ajit@mail.com\",\n    \"password\": \"1234567890\",\n    \"age\": 10,\n    \"phone\": \"1999888666\",\n    \"social\": [\n        \"akacomputerbaba\",\n        \"https://www.youtube.com/c/ComputerBabaOfficial\"\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/users/62ec3331b70a577f9d0f7e99",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"users",
+										"62ec3331b70a577f9d0f7e99"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "125"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"7d-dBfU3ADA6YoDoIYHZJ7BlwltdZw\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 04 Aug 2022 22:13:38 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 400,\n    \"message\": [\n        \"address.country should not be empty\",\n        \"address.country must be a string\"\n    ],\n    \"error\": \"Bad Request\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/users/62ec3331b70a577f9d0f7e99",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"62ec3331b70a577f9d0f7e99"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "404 Not Found: Delete User",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/users/62ec3331b70a577f9d0fde99",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"users",
+										"62ec3331b70a577f9d0fde99"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "65"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"41-Oo0Y+Yi1j4RemFP/Rhn7H7ZfWN4\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 04 Aug 2022 21:36:11 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 404,\n    \"message\": \"User not found\",\n    \"error\": \"Not Found\"\n}"
+						},
+						{
+							"name": "Delete User",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/users/62ec3331b70a577f9d0f7e99",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"users",
+										"62ec3331b70a577f9d0f7e99"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "549"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"225-Lz90oYJtg2BjWFc5WX0WZOgdMcc\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 04 Aug 2022 21:36:29 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"_id\": \"62ec3331b70a577f9d0f7e99\"\n}"
+						}
+					]
+				},
+				{
+					"name": "User Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"ajit@mail.com\",\n    \"password\": \"1234567891\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/users/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "User Login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"ajit@mail.com\",\n    \"password\": \"1234567890\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/users/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"users",
+										"login"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "609"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"261-gJAC/6XV6olCtERZ8zc4qVpW7dk\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 30 Sep 2022 18:00:58 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"metadata\": {\n        \"reference\": \"youtube\",\n        \"beta\": true\n    },\n    \"_id\": \"6304eab14d057f2315b38155\",\n    \"name\": \"Ajit\",\n    \"email\": \"ajit@mail.com\",\n    \"password\": \"$2b$10$JP605uFR6Vv/7cFnHGDrDe4l0ZdbIxiHT781BGDJ0Nh.m.U5YM7eW\",\n    \"age\": 10,\n    \"phone\": \"1999888666\",\n    \"status\": \"ACTIVE\",\n    \"social\": [\n        \"akacomputerbaba\",\n        \"https://www.youtube.com/c/ComputerBabaOfficial\"\n    ],\n    \"isEmailVerified\": false,\n    \"address\": {\n        \"address1\": \"Heart\",\n        \"address2\": \"Street\",\n        \"city\": \"Everywhere\",\n        \"country\": \"India\",\n        \"state\": \"Love\",\n        \"zipCode\": \"021000\",\n        \"_id\": \"6304eab14d057f2315b38156\"\n    },\n    \"accountType\": \"STUDENT\",\n    \"createdAt\": \"2022-08-23T14:56:49.937Z\",\n    \"updatedAt\": \"2022-08-23T14:56:49.937Z\",\n    \"__v\": 0\n}"
+						},
+						{
+							"name": "404 User Not Found",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"mh@mail.com\",\n    \"password\": \"1234567890\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/users/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"users",
+										"login"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "65"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"41-Oo0Y+Yi1j4RemFP/Rhn7H7ZfWN4\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 30 Sep 2022 18:01:22 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 404,\n    \"message\": \"User not found\",\n    \"error\": \"Not Found\"\n}"
+						},
+						{
+							"name": "401 Unauthorized User - Invalid Password",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"ajit@mail.com\",\n    \"password\": \"1234567891\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/users/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"users",
+										"login"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "43"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2b-hGShxOkieaAVDloBubJVM+h58D8\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 30 Sep 2022 18:02:01 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 401,\n    \"message\": \"Unauthorized\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Search User By Name",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/users/search?name=ajit",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"search"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "ajit"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Search User By Name",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/users/search?name=ajit",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"users",
+										"search"
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "ajit"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "537"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"219-7t023zObfLYSU+xaEILJc2K8GZc\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 09 Aug 2022 14:52:24 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"metadata\": {\n            \"reference\": \"youtube\",\n            \"beta\": true\n        },\n        \"_id\": \"62f27016634f58ad0ebb2b27\",\n        \"name\": \"Ajit\",\n        \"email\": \"ajit@mail.com\",\n        \"age\": 10,\n        \"phone\": \"1999888666\",\n        \"status\": \"ACTIVE\",\n        \"accountType\": \"STUDENT\",\n        \"social\": [\n            \"akacomputerbaba\",\n            \"https://www.youtube.com/c/ComputerBabaOfficial\"\n        ],\n        \"isEmailVerified\": false,\n        \"address\": {\n            \"address1\": \"Heart\",\n            \"address2\": \"Street\",\n            \"city\": \"Everywhere\",\n            \"country\": \"India\",\n            \"state\": \"Love\",\n            \"zipCode\": \"021000\",\n            \"_id\": \"62f27016634f58ad0ebb2b28\"\n        },\n        \"createdAt\": \"2022-08-09T14:32:54.773Z\",\n        \"updatedAt\": \"2022-08-09T14:32:54.773Z\",\n        \"__v\": 0\n    }\n]"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Jobs",
+			"item": [
+				{
+					"name": "Create Job",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userId\": \"62ec43e23c09fe18a93ca252\",\n    \"companyName\": \"Marvel Studios\",\n    \"title\": \"VFX Artist\",\n    \"description\": \"the best artist\",\n    \"experience\": 10,\n    \"tags\": [\"marvel\", \"movies\"],\n    \"salary\": \"25000 USD\",\n    \"type\": \"FULL_TIME\",\n    \"location\": {\n        \"address1\": \"TVA\",\n        \"address2\": \"Wakanda\",\n        \"city\": \"Universe\",\n        \"state\": \"Space\",\n        \"country\": \"Multiverse\",\n        \"zipCode\": \"000111\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/jobs",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"jobs"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "403 Forbidden: Create Job",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"userId\": \"62ec3a9c764516150f1e5594\",\n    \"companyName\": \"Marvel Studios\",\n    \"title\": \"VFX Artist\",\n    \"description\": \"the best artist\",\n    \"experience\": 10,\n    \"tags\": [\"marvel\", \"movies\"],\n    \"salary\": \"25000 USD\",\n    \"type\": \"FULL_TIME\",\n    \"location\": {\n        \"address1\": \"TVA\",\n        \"address2\": \"Wakanda\",\n        \"city\": \"Universe\",\n        \"state\": \"Space\",\n        \"country\": \"Multiverse\",\n        \"zipCode\": \"000111\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/jobs",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"jobs"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "79"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"4f-g446MCLXHrEpsLJLxkQ3LtSi5UQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 04 Aug 2022 22:09:54 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 403,\n    \"message\": \"Only employer can create job\",\n    \"error\": \"Forbidden\"\n}"
+						},
+						{
+							"name": "Validation Error: Create Job",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"userId\": \"62ec3a9c764516150f1e5594\",\n    \"companyName\": \"Marvel Studios\",\n    \"description\": \"the best artist\",\n    \"experience\": 10,\n    \"tags\": [\"marvel\", \"movies\"],\n    \"type\": \"FULL_TIME\",\n    \"location\": {\n        \"address1\": \"TVA\",\n        \"address2\": \"Wakanda\",\n        \"city\": \"Universe\",\n        \"state\": \"Space\",\n        \"country\": \"Multiverse\",\n        \"zipCode\": \"000111\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/jobs",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"jobs"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "105"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"69-I1OopYP92A1S+ctHNFX1NnU9DNM\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 04 Aug 2022 22:10:21 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 400,\n    \"message\": [\n        \"title should not be empty\",\n        \"title must be a string\"\n    ],\n    \"error\": \"Bad Request\"\n}"
+						},
+						{
+							"name": "Create Job",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"userId\": \"62ec43e23c09fe18a93ca252\",\n    \"companyName\": \"Marvel Studios\",\n    \"title\": \"VFX Artist\",\n    \"description\": \"the best artist\",\n    \"experience\": 10,\n    \"tags\": [\"marvel\", \"movies\"],\n    \"salary\": \"25000 USD\",\n    \"type\": \"FULL_TIME\",\n    \"location\": {\n        \"address1\": \"TVA\",\n        \"address2\": \"Wakanda\",\n        \"city\": \"Universe\",\n        \"state\": \"Space\",\n        \"country\": \"Multiverse\",\n        \"zipCode\": \"000111\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/jobs",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"jobs"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "485"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1e5-2qNm3PQ+JkA8vF5prtlSa5Im8S4\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 04 Aug 2022 22:11:14 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"employer\": \"62ec43e23c09fe18a93ca252\",\n    \"companyName\": \"Marvel Studios\",\n    \"title\": \"VFX Artist\",\n    \"description\": \"the best artist\",\n    \"experience\": 10,\n    \"tags\": [\n        \"marvel\",\n        \"movies\"\n    ],\n    \"salary\": \"25000 USD\",\n    \"type\": \"FULL_TIME\",\n    \"location\": {\n        \"address1\": \"TVA\",\n        \"address2\": \"Wakanda\",\n        \"city\": \"Universe\",\n        \"country\": \"Multiverse\",\n        \"state\": \"Space\",\n        \"zipCode\": \"000111\",\n        \"_id\": \"62ec44023c09fe18a93ca25a\"\n    },\n    \"_id\": \"62ec44023c09fe18a93ca259\",\n    \"createdAt\": \"2022-08-04T22:11:14.332Z\",\n    \"updatedAt\": \"2022-08-04T22:11:14.332Z\",\n    \"__v\": 0\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Job",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/jobs/6304ead34d057f2315b3815d",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"jobs",
+								"6304ead34d057f2315b3815d"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "404 Not Found: Get Job",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/jobs/62ec43e23c09fe18a93ca252",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"jobs",
+										"62ec43e23c09fe18a93ca252"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "64"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"40-NLzls/O8q5Y3tZT9BhkR/fmZU8Q\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 04 Aug 2022 22:11:45 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 404,\n    \"message\": \"Job not found\",\n    \"error\": \"Not Found\"\n}"
+						},
+						{
+							"name": "Get Job",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/jobs/62ec44023c09fe18a93ca259",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"jobs",
+										"62ec44023c09fe18a93ca259"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "485"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1e5-1FPS3X6b1lsYQWoTFBmQEciYEFY\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 04 Aug 2022 22:12:23 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"_id\": \"6304ead34d057f2315b3815d\",\n    \"employer\": {\n        \"_id\": \"6304eac64d057f2315b38158\",\n        \"name\": \"Ronalod\",\n        \"email\": \"rn@mail.com\"\n    },\n    \"companyName\": \"Marvel Studios\",\n    \"title\": \"VFX Artist\",\n    \"description\": \"the best artist\",\n    \"experience\": 10,\n    \"tags\": [\n        \"marvel\",\n        \"movies\"\n    ],\n    \"salary\": \"25000 USD\",\n    \"type\": \"FULL_TIME\",\n    \"location\": {\n        \"address1\": \"TVA\",\n        \"address2\": \"Wakanda\",\n        \"city\": \"Universe\",\n        \"country\": \"Multiverse\",\n        \"state\": \"Space\",\n        \"zipCode\": \"000111\",\n        \"_id\": \"6304ead34d057f2315b3815e\"\n    },\n    \"createdAt\": \"2022-08-23T14:57:23.065Z\",\n    \"updatedAt\": \"2022-08-23T14:57:23.065Z\",\n    \"__v\": 0\n}"
+						}
+					]
+				},
+				{
+					"name": "Get All Jobs",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/jobs",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"jobs"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get All Jobs",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/jobs",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"jobs"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "487"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1e7-6gDmS3o5OESTT8YNI1PgWTrAzdA\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 04 Aug 2022 22:12:49 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"_id\": \"6304ead34d057f2315b3815d\",\n        \"employer\": {\n            \"_id\": \"6304eac64d057f2315b38158\",\n            \"name\": \"Ronalod\",\n            \"email\": \"rn@mail.com\"\n        },\n        \"companyName\": \"Marvel Studios\",\n        \"title\": \"VFX Artist\",\n        \"description\": \"the best artist\",\n        \"experience\": 10,\n        \"tags\": [\n            \"marvel\",\n            \"movies\"\n        ],\n        \"salary\": \"25000 USD\",\n        \"type\": \"FULL_TIME\",\n        \"location\": {\n            \"address1\": \"TVA\",\n            \"address2\": \"Wakanda\",\n            \"city\": \"Universe\",\n            \"country\": \"Multiverse\",\n            \"state\": \"Space\",\n            \"zipCode\": \"000111\",\n            \"_id\": \"6304ead34d057f2315b3815e\"\n        },\n        \"createdAt\": \"2022-08-23T14:57:23.065Z\",\n        \"updatedAt\": \"2022-08-23T14:57:23.065Z\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"6304f798b436ffdbedf11d06\",\n        \"employer\": {\n            \"_id\": \"6304eac64d057f2315b38158\",\n            \"name\": \"Ronalod\",\n            \"email\": \"rn@mail.com\"\n        },\n        \"companyName\": \"Marvel Studios\",\n        \"title\": \"VFX Artist\",\n        \"description\": \"the best artist\",\n        \"experience\": 10,\n        \"tags\": [\n            \"marvel\",\n            \"movies\"\n        ],\n        \"salary\": \"25000 USD\",\n        \"type\": \"FULL_TIME\",\n        \"location\": {\n            \"address1\": \"TVA\",\n            \"address2\": \"Wakanda\",\n            \"city\": \"Universe\",\n            \"country\": \"Multiverse\",\n            \"state\": \"Space\",\n            \"zipCode\": \"000111\",\n            \"_id\": \"6304f798b436ffdbedf11d07\"\n        },\n        \"createdAt\": \"2022-08-23T15:51:52.582Z\",\n        \"updatedAt\": \"2022-08-23T15:51:52.582Z\",\n        \"jobId\": 1,\n        \"__v\": 0\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Update Job",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userId\": \"62ec43e23c09fe18a93ca252\",\n    \"companyName\": \"Marvel Studios\",\n    \"title\": \"Hero\",\n    \"description\": \"the best hero\",\n    \"experience\": 10,\n    \"tags\": [\"marvel\", \"movies\"],\n    \"salary\": \"25000 USD\",\n    \"type\": \"FULL_TIME\",\n    \"location\": {\n        \"address1\": \"TVA\",\n        \"address2\": \"Wakanda\",\n        \"city\": \"Universe\",\n        \"state\": \"Space\",\n        \"country\": \"Multiverse\",\n        \"zipCode\": \"000111\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/jobs/62ec44023c09fe18a93da259",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"jobs",
+								"62ec44023c09fe18a93da259"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update Job",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"userId\": \"62ec43e23c09fe18a93ca252\",\n    \"companyName\": \"Marvel Studios\",\n    \"title\": \"Hero\",\n    \"description\": \"the best hero\",\n    \"experience\": 10,\n    \"tags\": [\"marvel\", \"movies\"],\n    \"salary\": \"25000 USD\",\n    \"type\": \"FULL_TIME\",\n    \"location\": {\n        \"address1\": \"TVA\",\n        \"address2\": \"Wakanda\",\n        \"city\": \"Universe\",\n        \"state\": \"Space\",\n        \"country\": \"Multiverse\",\n        \"zipCode\": \"000111\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/jobs/62ec44023c09fe18a93ca259",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"jobs",
+										"62ec44023c09fe18a93ca259"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "477"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1dd-PwTrp8PtIwrlAbVM4PH3Vtei+P8\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 04 Aug 2022 22:16:40 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"_id\": \"62ec44023c09fe18a93ca259\",\n    \"employer\": \"62ec43e23c09fe18a93ca252\",\n    \"companyName\": \"Marvel Studios\",\n    \"title\": \"Hero\",\n    \"description\": \"the best hero\",\n    \"experience\": 10,\n    \"tags\": [\n        \"marvel\",\n        \"movies\"\n    ],\n    \"salary\": \"25000 USD\",\n    \"type\": \"FULL_TIME\",\n    \"location\": {\n        \"address1\": \"TVA\",\n        \"address2\": \"Wakanda\",\n        \"city\": \"Universe\",\n        \"country\": \"Multiverse\",\n        \"state\": \"Space\",\n        \"zipCode\": \"000111\",\n        \"_id\": \"62ec4548a5a35476a749d946\"\n    },\n    \"createdAt\": \"2022-08-04T22:11:14.332Z\",\n    \"updatedAt\": \"2022-08-04T22:16:40.007Z\",\n    \"__v\": 0\n}"
+						},
+						{
+							"name": "404 Not Found: Update Job",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"userId\": \"62ec43e23c09fe18a93ca252\",\n    \"companyName\": \"Marvel Studios\",\n    \"title\": \"Hero\",\n    \"description\": \"the best hero\",\n    \"experience\": 10,\n    \"tags\": [\"marvel\", \"movies\"],\n    \"salary\": \"25000 USD\",\n    \"type\": \"FULL_TIME\",\n    \"location\": {\n        \"address1\": \"TVA\",\n        \"address2\": \"Wakanda\",\n        \"city\": \"Universe\",\n        \"state\": \"Space\",\n        \"country\": \"Multiverse\",\n        \"zipCode\": \"000111\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/jobs/62ec44023c09fe18a93da259",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"jobs",
+										"62ec44023c09fe18a93da259"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "64"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"40-NLzls/O8q5Y3tZT9BhkR/fmZU8Q\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 04 Aug 2022 22:17:38 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 404,\n    \"message\": \"Job not found\",\n    \"error\": \"Not Found\"\n}"
+						},
+						{
+							"name": "Validation Errors: Update Job",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"userId\": \"62ec43e23c09fe18a93ca252\",\n    \"companyName\": \"Marvel Studios\",\n    \"title\": \"Hero\",\n    \"description\": \"the best hero\",\n    \"experience\": 10,\n    \"tags\": [\"marvel\", \"movies\"],\n    \"salary\": \"25000 USD\",\n    \"type\": \"FULL_TIME\",\n    \"location\": {\n        \"address1\": \"TVA\",\n        \"address2\": \"Wakanda\",\n        \"city\": \"Universe\",\n        \"state\": \"Space\",\n        \"country\": \"Multiverse\",\n        \"zipCode\": \"000111\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/jobs/62ec44023c09fe18a93da259",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"jobs",
+										"62ec44023c09fe18a93da259"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "127"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"7f-4XlWHaWJBSiPxGVQAQH6pGOUoyU\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 04 Aug 2022 22:18:02 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 400,\n    \"message\": [\n        \"location.country should not be empty\",\n        \"location.country must be a string\"\n    ],\n    \"error\": \"Bad Request\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Job",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/jobs/62ec44713c09fe18a93ca263",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"jobs",
+								"62ec44713c09fe18a93ca263"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "404 Not Found: Delete Job",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/jobs/62ec44023c09fe18a93da259",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"jobs",
+										"62ec44023c09fe18a93da259"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "64"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"40-NLzls/O8q5Y3tZT9BhkR/fmZU8Q\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 04 Aug 2022 22:18:56 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 404,\n    \"message\": \"Job not found\",\n    \"error\": \"Not Found\"\n}"
+						},
+						{
+							"name": "Delete Job",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/jobs/62ec44713c09fe18a93ca263",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"jobs",
+										"62ec44713c09fe18a93ca263"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "34"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"22-3zNfB6xdVOOh0N2CqqxnX51iWXE\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 04 Aug 2022 22:19:33 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"_id\": \"62ec44713c09fe18a93ca263\"\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}

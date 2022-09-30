@@ -3,33 +3,22 @@ import {
   Injectable,
   NotFoundException,
   ServiceUnavailableException,
-  UnauthorizedException,
 } from "@nestjs/common";
 import { InjectModel } from "@nestjs/mongoose";
 import { Model } from "mongoose";
-import { USER_MODEL, UserDocument } from "../schemas/user";
+import { USER_MODEL, UserDocument, IUserModel } from "../schemas/user";
 import { AccountLoginDTO, CreateUserDTO, UpdateUserDTO } from "./dto";
 
 @Injectable()
 export class UsersService {
   constructor(
-    @InjectModel(USER_MODEL) private readonly userModel: Model<UserDocument>
+    @InjectModel(USER_MODEL) private readonly userModel: IUserModel
   ) {}
 
   async login(accountLoginDto: AccountLoginDTO) {
     const { email, password } = accountLoginDto;
 
-    const user = await this.userModel.findOne({ email }, "+password");
-
-    if (!user) {
-      throw new NotFoundException("User not found");
-    }
-
-    const isPwdMatched = await user.isValidPassword(password);
-
-    if (!isPwdMatched) {
-      throw new UnauthorizedException();
-    }
+    const user = await this.userModel.findByEmailAndPassword(email, password);
 
     return user;
   }

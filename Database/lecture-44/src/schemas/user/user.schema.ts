@@ -1,3 +1,4 @@
+import { Model } from "mongoose";
 import { Prop, Schema, SchemaFactory, raw } from "@nestjs/mongoose";
 import { ACCOUNT_STATUS, ACCOUNT_TYPE } from "../../constants";
 import { AddressSchema, Address } from "../common/address.schema";
@@ -10,6 +11,23 @@ import { hash, compare } from "bcrypt";
       const hashedPassword = this.password;
       const isMatched = await compare(candidatePassword, hashedPassword);
       return isMatched;
+    }
+  },
+  statics: {
+    async findByEmailAndPassword(
+      this: IUserModel,
+      email: string,
+      password: string
+    ) {
+      const user = await this.findOne<UserDocument>({ email }, "+password");
+
+      if (!user) return;
+
+      const isPwdMatched = await user.isValidPassword(password);
+
+      if (!isPwdMatched) return;
+
+      return user;
     },
   },
 })
@@ -67,6 +85,13 @@ export class User {
 }
 
 export type UserDocument = User & Document;
+
+export interface IUserModel extends Model<UserDocument> {
+  findByEmailAndPassword: (
+    email: string,
+    password: string
+  ) => Promise<UserDocument | undefined>;
+}
 
 export const USER_MODEL = User.name; // User
 

@@ -4,8 +4,7 @@ import {
   NotFoundException,
   ServiceUnavailableException,
 } from "@nestjs/common";
-import { InjectModel, InjectConnection } from "@nestjs/mongoose";
-import { Connection } from "mongoose";
+import { InjectModel } from "@nestjs/mongoose";
 import { DATABASE_CONNECTION } from "../infra/mongoose/database.config";
 import { USER_MODEL, UserDocument, IUserModel } from "../schemas/user";
 import { AccountLoginDTO, CreateUserDTO, UpdateUserDTO } from "./dto";
@@ -15,12 +14,7 @@ export class UsersService {
   constructor(
     @InjectModel(USER_MODEL, DATABASE_CONNECTION.APP)
     private readonly userModel: IUserModel,
-    @InjectConnection(DATABASE_CONNECTION.APP_AGGREGATE_LINE)
-    private readonly appDbConnection: Connection
-  ) {
-    // NOTE: Use this Connection for operations like Aggregation or whatever you want to do
-    console.log(`[UsersService]: ${DATABASE_CONNECTION.APP_AGGREGATE_LINE} Connection Injected`);
-  }
+  ) {}
 
   async login(accountLoginDto: AccountLoginDTO) {
     const { email, password } = accountLoginDto;

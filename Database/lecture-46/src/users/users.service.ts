@@ -15,11 +15,11 @@ export class UsersService {
   constructor(
     @InjectModel(USER_MODEL, DATABASE_CONNECTION.APP)
     private readonly userModel: IUserModel,
-    @InjectConnection(DATABASE_CONNECTION.APP)
+    @InjectConnection(DATABASE_CONNECTION.APP_AGGREGATE_LINE)
     private readonly appDbConnection: Connection
   ) {
-    console.log(`[UsersService]: App DB Connection Injected`);
-    console.log(`[UsersService]: App DB Host ${this.appDbConnection.host}`);
+    // NOTE: Use this Connection for operations like Aggregation or whatever you want to do
+    console.log(`[UsersService]: ${DATABASE_CONNECTION.APP_AGGREGATE_LINE} Connection Injected`);
   }
 
   async login(accountLoginDto: AccountLoginDTO) {

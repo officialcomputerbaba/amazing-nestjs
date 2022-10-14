@@ -4,7 +4,8 @@ import {
   NotFoundException,
   ServiceUnavailableException,
 } from "@nestjs/common";
-import { InjectModel } from "@nestjs/mongoose";
+import { InjectModel, InjectConnection } from "@nestjs/mongoose";
+import { Connection } from "mongoose";
 import { DATABASE_CONNECTION } from "../infra/mongoose/database.config";
 import { USER_MODEL, UserDocument, IUserModel } from "../schemas/user";
 import { AccountLoginDTO, CreateUserDTO, UpdateUserDTO } from "./dto";
@@ -14,7 +15,12 @@ export class UsersService {
   constructor(
     @InjectModel(USER_MODEL, DATABASE_CONNECTION.APP)
     private readonly userModel: IUserModel,
-  ) {}
+    @InjectConnection(DATABASE_CONNECTION.APP)
+    private readonly appDbConnection: Connection
+  ) {
+    console.log(`[UsersService]: App DB Connection Injected`);
+    console.log(`[UsersService]: App DB Host ${this.appDbConnection.host}`);
+  }
 
   async login(accountLoginDto: AccountLoginDTO) {
     const { email, password } = accountLoginDto;

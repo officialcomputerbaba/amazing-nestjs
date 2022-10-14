@@ -28,3 +28,25 @@ export class MongooseConfigService implements MongooseOptionsFactory {
     };
   }
 }
+
+@Injectable()
+export class MongooseAdminConfigService implements MongooseOptionsFactory {
+  constructor(private readonly config: ConfigService) {}
+
+  async createMongooseOptions() {
+    const username = this.config.get("ADMIN_DATABASE_USER");
+    const password = this.config.get("ADMIN_DATABASE_PASSWORD");
+    const host = this.config.get("ADMIN_DATABASE_HOST");
+    const port = this.config.get("ADMIN_DATABASE_PORT");
+    const db = this.config.get("ADMIN_DATABASE_NAME");
+    const isLocal = this.config.get("NODE_ENV") === "LOCAL";
+
+    const uri = isLocal
+      ? `mongodb://localhost:${port}/${db}}`
+      : `mongodb+srv://${username}:${password}@${host}/${db}?retryWrites=true&w=majority`;
+
+    return {
+      uri,
+    };
+  }
+}

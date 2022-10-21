@@ -1,7 +1,6 @@
 import { Global, Module } from "@nestjs/common";
 import { ConfigService } from "@nestjs/config";
 import { MongooseModule } from "@nestjs/mongoose";
-import { MongooseConfigService } from "./mongoose-config.service";
 import mongoose, { Connection } from "mongoose";
 import { DATABASE_CONNECTION } from "./database.constants";
 
@@ -34,12 +33,6 @@ const DATABASE_PROVIDER = {
 
 @Global()
 @Module({
-  imports: [
-    MongooseModule.forRootAsync({
-      useClass: MongooseConfigService,
-    }),
-  ],
-
   providers: [DATABASE_PROVIDER],
   exports: [MongooseModule, DATABASE_PROVIDER],
 })

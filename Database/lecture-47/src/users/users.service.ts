@@ -6,7 +6,7 @@ import {
   ServiceUnavailableException,
 } from "@nestjs/common";
 import { InjectModel } from "@nestjs/mongoose";
-import { DATABASE_CONNECTION } from "src/infra/mongoose/database.constants";
+import { DATABASE_CONNECTION } from "../infra/mongoose/database.constants";
 import { USER_MODEL, UserDocument, IUserModel } from "../schemas/user";
 import { AccountLoginDTO, CreateUserDTO, UpdateUserDTO } from "./dto";
 import { Connection } from "mongoose";

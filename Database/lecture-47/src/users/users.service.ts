@@ -9,16 +9,21 @@ import { InjectModel } from "@nestjs/mongoose";
 import { DATABASE_CONNECTION } from "../infra/mongoose/database.constants";
 import { USER_MODEL, UserDocument, IUserModel } from "../schemas/user";
 import { AccountLoginDTO, CreateUserDTO, UpdateUserDTO } from "./dto";
-import { Connection } from "mongoose";
+import { Connection, Model, Document } from "mongoose";
 
 @Injectable()
 export class UsersService {
   constructor(
     @InjectModel(USER_MODEL)
     private readonly userModel: IUserModel,
+
+    @Inject("STATS_MODEL")
+    private readonly statsModel: Model<Document>,
+
     @Inject(DATABASE_CONNECTION) private readonly dbConn: Connection
   ) {
     console.log(`[UsersService]: Database Connection Injected ${this.dbConn.port}`);
+    console.log(`[UsersService]: Stats Model Injected ${this.statsModel}`);
   }
 
   async login(accountLoginDto: AccountLoginDTO) {
